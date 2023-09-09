@@ -4,8 +4,7 @@ int recursive_fibonacci(int i);
 
 int main() {
     int n;
-    char ch;
-    if (scanf("%d%c", &n, &ch) == 2 && ch == '\n' && n >= 0)
+    if (scanf("%d", &n) == 1 && n >= 0)
         printf("%d", recursive_fibonacci(n));
     else
         printf("n/a");
@@ -13,11 +12,11 @@ int main() {
 }
 
 int recursive_fibonacci(int i) {
-    if (i == 0) {
+    if (i == 0)
         return 0;
-    }
-    if (i == 1) {
+
+    if (i == 1)
         return 1;
-    }
+
     return recursive_fibonacci(i - 1) + recursive_fibonacci(i - 2);
 }
