@@ -1,78 +1,76 @@
 #include <stdio.h>
 
+#define NL '\n'
+#define SP ' '
+
 int code();
-int check_input_in_decod(char ch1, char ch2, char ch3);
+int check_input_in_decode(char ch1, char ch2, char ch3);
 int check_hex(char ch);
-int upper_case(char ch);
+char upper_case(char ch);
 int decode();
 
 int main(int argc, char *argv[]) {
+    int result = 0;
+    
     if (argc == 2) {
-        if (*argv[1] == '0') {
-            if (code()) printf("n/a");
-        } else {
-            if (*argv[1] == '1') {
-                if (decode()) printf("n/a");
-            } else
-                printf("n/a");
+        switch (*argv[1]) {
+            case '0': result = code(); break;
+            case '1': result = decode(); break;
+            default: result = 0; break;
         }
     } else
-        printf("n/a");
+        result = 0;
+    
+    if (!result) printf("n/a");
     return 0;
 }
 
 int code() {
-    int res = 0;
+    int res = 1;
     char ch1, ch2;
     do {
         scanf("%c%c", &ch1, &ch2);
-        if (ch1 != ' ' && ch1 != '\n' && (ch2 == ' ' || ch2 == '\n')) {
+        if (ch1 != SP && ch1 != NL && (ch2 == SP || ch2 == NL)) {
             printf("%X", ch1);
-            if (ch2 == ' ') printf("%c", ch2);
+            if (ch2 == SP) printf("%c", ch2);
         } else {
-            res = 1;
+            res = 0;
             break;
         }
-    } while (ch2 != '\n');
+    } while (ch2 != NL);
     return res;
 }
 
 int check_input_in_decode(char ch1, char ch2, char ch3) {
-    int res = 0;
-    if (check_hex(ch1) == 1) res = 1;
-    if (check_hex(ch2) == 1) res = 1;
-    if (ch3 != ' ' && ch3 != '\n') res = 1;
+    int res = 1;
+    if (!check_hex(ch1) || !check_hex(ch2) || (ch3 != SP && ch3 != NL)) res = 0;
     return res;
 }
 
 int check_hex(char ch) {
-    int res = 1;
-    if (ch >= '0' && ch <= '9') res = 0;
-    if (ch >= 'A' && ch <= 'F') res = 0;
-    if (ch >= 'a' && ch <= 'f') res = 0;
+    int res = 0;
+    if (ch >= '0' && ch <= '9') res = 1;
+    else if (ch >= 'A' && ch <= 'F') res = 1;
     return res;
 }
 
-int upper_case(char ch) {
+char upper_case(char ch) {
     if (ch >= 'a' && ch <= 'f') ch -= 32;
     return ch;
 }
 
 int decode() {
-    int res = 0;
-    int i = 0;
+    int res = 1;
     char ch1, ch2, ch3;
     do {
-        ch1 = getchar();
-        ch2 = getchar();
-        ch3 = getchar();
-        if (check_input_in_decode(ch1, ch2, ch3) == 1) {
-            res = 1;
-            break;
-        }
+        scanf("%c%c%c", &ch1, &ch2, &ch3);
         ch1 = upper_case(ch1);
         ch2 = upper_case(ch2);
-        i = 0;
+        if (!check_input_in_decode(ch1, ch2, ch3)) {
+            res = 0;
+            break;
+        }
+        int i = 0;
         if (ch1 >= '0' && ch1 <= '9')
             i += 16 * (ch1 - '0');
         else {
@@ -83,8 +81,9 @@ int decode() {
         else {
             i += ch2 - 55;
         }
+        
         printf("%c", i);
-        if (ch3 == ' ') printf(" ");
-    } while (ch3 != '\n');
+        if (ch3 == SP) printf(" ");
+    } while (ch3 != NL);
     return res;
 }
