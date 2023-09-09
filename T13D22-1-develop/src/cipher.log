@@ -1,0 +1,39 @@
+INFO 10:58:39 file "abc.txt" is opened
+INFO 10:58:39 file "abc.txt" is read
+INFO 10:58:39 file "abc.txt" is closed
+INFO 11:09:06 file "abc.txt" is opened
+INFO 11:09:06 file "abc.txt" is read
+INFO 11:09:06 file "abc.txt" is closed
+INFO 11:09:12 file "abc.txt" is opened
+INFO 11:09:21 string is wrote in file "abc.txt" 
+INFO 11:09:21 file "abc.txt" is closed
+INFO 11:09:27 file "abc.txt" is opened
+INFO 11:09:27 file "abc.txt" is read
+INFO 11:09:27 file "abc.txt" is closed
+INFO 11:09:34 file "ai_modules/m1.c" is opened
+INFO 11:09:34 file "ai_modules/m1.c" is read
+INFO 11:09:34 file "ai_modules/m1.c" is closed
+INFO 11:09:34 file "ai_modules/m1.c" is opened
+INFO 11:09:34 file "ai_modules/m1.c" is encrypt
+INFO 11:09:34 file "ai_modules/m1.c" is closed
+INFO 11:09:34 file "ai_modules/m1.h" is opened
+INFO 11:09:34 file "ai_modules/m1.h" is cleared
+INFO 11:09:34 file "ai_modules/m1.h" is closed
+INFO 11:09:34 file "ai_modules/m2.c" is opened
+INFO 11:09:34 file "ai_modules/m2.c" is read
+INFO 11:09:34 file "ai_modules/m2.c" is closed
+INFO 11:09:34 file "ai_modules/m2.c" is opened
+INFO 11:09:34 file "ai_modules/m2.c" is encrypt
+INFO 11:09:34 file "ai_modules/m2.c" is closed
+INFO 11:09:34 file "ai_modules/m2.h" is opened
+INFO 11:09:34 file "ai_modules/m2.h" is cleared
+INFO 11:09:34 file "ai_modules/m2.h" is closed
+ERROR 11:10:24 file "sadf"can't be opened
+INFO 11:32:36 file "abc.txt" is opened
+INFO 11:32:36 file "abc.txt" is read
+INFO 11:32:36 file "abc.txt" is closed
+ERROR 11:32:40 file "wer" can't be opened
+INFO 11:40:46 file "abc.txt" is opened
+INFO 11:40:46 file "abc.txt" is read
+INFO 11:40:46 file "abc.txt" is closed
+ERROR 11:40:51 file "fghj" can't be opened
