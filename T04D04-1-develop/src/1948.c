@@ -6,13 +6,9 @@ int div(int a, int b);
 
 int main() {
     int a = 0;
-    char ch;
-    if (scanf("%d%c", &a, &ch) == 2 && ch == '\n') {
-        if (a == 0)
-            printf("n/a");
-        else
-            printf("%d", max_prime_number(a));
-    } else
+    if (scanf("%d", &a) == 1 && a != 0)
+        printf("%d", max_prime_number(a));
+    else
         printf("n/a");
     return 0;
 }
