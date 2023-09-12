@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <math.h>
+
 #define DIVBYZERO -99999
 #define eps 1e-6
 
@@ -10,12 +12,12 @@ int div(int a, int b);
 int max(int a, int b);
 double important_function(float x);
 double fun();
+void in_curcle(float x, float y);
 
 int main() {
   int a = 0;
   int b = 0;
-  char ch;
-  if (scanf("%d %d%c", &a, &b, &ch) == 3 && ch == '\n') {
+  if (scanf("%d %d%c", &a, &b) == 2) {
     int d = div(a, b);
     if (d == DIVBYZERO)
       printf("%d %d %d n/a", sum(a, b), diff(a, b), mult(a, b));
@@ -28,6 +30,13 @@ int main() {
   double res = fun();
   if (res <= eps)
     printf("OK!");
+
+  
+  float x, y;
+  if (scanf("%f %f%c", &x, &y) == 2)
+    in_curcle(x, y);
+  else
+    printf("n/a");
   return 0;
 }
 
@@ -50,3 +59,11 @@ double important_function(float x) {
 }
 
 double fun() { return (1.0 / 13) * (pow(((2 - 1.0) / (2 + 1.0)), 20)); }
+
+void in_curcle(float x, float y) {
+  float f = x * x + y * y;
+  if (f < 25)
+    printf("GOTCHA");
+  else
+    printf("MISS");
+}
