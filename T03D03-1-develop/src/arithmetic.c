@@ -17,7 +17,7 @@ void in_curcle(float x, float y);
 int main() {
   int a = 0;
   int b = 0;
-  if (scanf("%d %d%c", &a, &b) == 2) {
+  if (scanf("%d %d", &a, &b) == 2) {
     int d = div(a, b);
     if (d == DIVBYZERO)
       printf("%d %d %d n/a", sum(a, b), diff(a, b), mult(a, b));
@@ -33,7 +33,7 @@ int main() {
 
   
   float x, y;
-  if (scanf("%f %f%c", &x, &y) == 2)
+  if (scanf("%f %f", &x, &y) == 2)
     in_curcle(x, y);
   else
     printf("n/a");
