@@ -3,33 +3,41 @@ The russian version of the task can be found in the repository.
 
 ## Contents
 
-1. [Chapter III](#chapter-iii) \
-    1.1. [Quest 1. Basic control structures. Tom Kilburn.](#quest-1-basic-control-structures-tom-kilburn)  
-    1.2. [Quest 2. Basic control structures. Some problems with symbols.](#quest-2-basic-control-structures-some-problems-with-symbols)  
-    1.3. [Quest 3. Recursive.](#quest-3-recursive)  
-    1.4. [Quest 4. Table.](#quest-4-table)  
-    1.5. [Quest 5*. Func.](#bonus-quest-5-func)
+1. [MODULES](#MODULES) \
+ 1.1. [max_prime_divisor](#max_prime_divisor) \
+ 1.2. [char_decode](#char_decode) \
+ 1.3. [fibonacci](#fibonacci) \
+ 1.4. [ABH_functions](#ABH_functions) \
+ 1.5. [Quest 5*. Func.](#bonus-quest-5-func) 
 
 
-# Chapter III
 
-***== Quest 1 received. Create an src/1948.c program that finds the largest prime divisor of any entered integer `a` and prints it to the screen. It is necessary to allocate a separate function for calculating this value. Do not use division and the operation of taking the remainder of the division. However, if necessary, division can be realised by subtraction. For errors, display "n/a". ==***
+
+# MODULES
+
+## max_prime_divisor
+
+> max_prime_divisor.h | max_prime_divisor.c
+
+***The program finds the largest prime divisor of any entered integer `a` and prints it to the screen. Division and the operation of taking the remainder of the division are realised by subtraction. 
+For errors, display "n/a".***
 
 | Input | Output |
 | ------ | ------ |
 | 100 | 5 |
 | -4 | 2 |
 
+<br/>
 
-## Quest 2. Basic control structures. Some problems with symbols.
 
-***== Quest 2 received. Create an src/char_decode.c program that takes operation mode 
-(0–encoding or 1–decoding) as a command-line parameter. If the decoding mode is selected, 
-the program must accept two-character strings separated by a space from stdin and output 
-decoded characters separated by a space to stdout. Encoding should involve a reverse 
-operation. The subtasks of encoding and decoding should be organized as separate functions. 
-Pay attention to the ASCII table. For errors, display "n/a". 
-A line break character is a sign of the end of the input. ==***
+## char_decode
+
+> char_decode.h | char_decode.c
+
+***The program takes operation mode (0–encoding or 1–decoding) as a command-line parameter. 
+If the decoding mode is selected, the program must accept two-character strings separated by a space from stdin and output decoded characters separated by a space to stdout. Encoding involves a reverse 
+operation. A line break character is a sign of the end of the input. The subtasks of encoding and decoding are organized as separate functions. 
+For errors, display "n/a".***
 
 | Terminal arguments | Input | Output |
 | ------ | ------ | ------ |
@@ -38,19 +46,27 @@ A line break character is a sign of the end of the input. ==***
 | 1 | 48 45 4C 4C 4F | H E L L O |
 | 1 | 48454C4C4F | n/a |
 
+<br/>
 
-## Quest 3. Recursive.
+
+## fibonacci
+
+> fibonacci.h | fibonacci.c
 
     46 49 42 4F 4E 41 43 43 49 32 31
 
-***== Quest 3 received. Create an src/quest3.c program that calculates and displays a number from the Fibonacci sequence (e.g. 21) using a recursive algorithm. The search of the specific Fibonacci number must be organized as a separate function. The number is entered via the standard input stream. For errors, display "n/a". ==***
+***The program calculates and displays a number from the Fibonacci sequence (e.g. 21) using a recursive algorithm. The search of the specific Fibonacci number is organized as a separate function. The number is entered via the standard input stream. 
+For errors, display "n/a".***
 
 | Input | Output |
 | ------ | ------ |
 | 21 | 10946 |
+<br/>
 
 
-## Quest 4. Table.
+## ABH_functions
+
+> ABH_functions.h | ABH_functions.c
 
 The witch of Agnesi with diameter one: \
 ![The witch of Agnesi](misc/images/va.png) 
@@ -61,7 +77,8 @@ The lemniscate of Bernoulli with a unit interval in the positive half-plane: \
 Quadratic hyperbola: \
 ![Quadratic hyperbola](misc/images/g.png) 
 
-***== Quest 4 received. Create an src/door_functions.c program that calculates and displays a table with three functions: the witch of Agnesi with diameter one, the lemniscate of Bernoulli with a unit interval in the positive half-plane (Y > 0), and a quadratic hyperbola. The first column should list the values of the X-axis from minus Pi through plus Pi, there should be 42 measurements at this interval; the second, third, and fourth columns describe the values ​​of the functions at a point. Table headers are not needed. All values must be recorded with an accuracy of 7 decimal places, it is necessary to use the double type for increased accuracy. Column separator: "|". The table should have a total of 42 entries. Put the result of the program in src/data/door_data.txt (no need to add the function of creating a file from the program, you can use output redirection). If the function is not defined at any point, there must be the "-" symbol in the table. ==***
+***The program calculates and displays a table with three functions: the witch of Agnesi with diameter one, the lemniscate of Bernoulli with a unit interval in the positive half-plane (Y > 0), and a quadratic hyperbola. The first column lists the values of the X-axis from minus Pi through plus Pi, there is 42 measurements at this interval; the second, third, and fourth columns describe the values ​​of the functions at a point. All values are recorded with an accuracy of 7 decimal places. Column separator: "|". 
+If the function is not defined at any point, there is the "-" symbol in the table.***
 
 Result:
 
