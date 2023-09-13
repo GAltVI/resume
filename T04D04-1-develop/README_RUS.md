@@ -4,17 +4,17 @@
 ## Contents
 
 1. [MODULES](#MODULES) \
- 1.1. [max prime divisor](#max-prime-divisor) \
- 1.2. [char_decode](#char-decode) \
+ 1.1. [max_prime_divisor](#max_prime_divisor) \
+ 1.2. [char_decode](#char_decode) \
  1.3. [fibonacci](#fibonacci) \
- 1.4. [Quest 4. Table.](#quest-4-table) \
+ 1.4. [ABH_functions](#ABH_functions) \
  1.5. [Quest 5*. Func.](#bonus-quest-5-func) 
 
 
 
 # MODULES
 
-## max prime divisor
+## max_prime_divisor
 
 > max_prime_divisor.h | max_prime_divisor.c
 
@@ -47,7 +47,9 @@
 
 
 
-## fibonacci.h | fibonacci.c
+## fibonacci
+
+> fibonacci.h | fibonacci.c
 
     46 49 42 4F 4E 41 43 43 49 32 31
 
@@ -60,7 +62,9 @@
 
 
 
-## ABH_functions.h | ABH_functions.c
+## ABH_functions
+
+> ABH_functions.h | ABH_functions.c
 
 Верзьера Аньези с единичным диаметром: \
 ![Верзьера Аньези](misc/images/va.png) 
