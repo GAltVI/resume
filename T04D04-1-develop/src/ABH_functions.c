@@ -1,11 +1,6 @@
 #include <math.h>
 #include <stdio.h>
-#define N 42
-#define eps 1e-7
-
-double agnesi(double x);
-double bernoulli(double x);
-double hyperbola(double x);
+#include "ABH_functions.h"
 
 double agnesi(double x) { return 1.0 / (1.0 + x * x); }
 
