@@ -3,16 +3,28 @@
 #include "ABH_functions.h"
 #include "fibonacci.h"
 
-int test_max_prime_number() {
+void test_max_prime_number();
+void test_char_code_decode(int argc, char *argv[]);
+void test_functions();
+void test_fibonacci();
+
+int main(){
+    test_max_prime_number();
+    test_char_code_decode(int argc, char *argv[]);
+    test_functions();
+    test_fibonacci();
+    return 0;
+}
+
+void test_max_prime_number() {
     int a = 0;
     if (scanf("%d", &a) == 1 && a != 0)
         printf("%d", max_prime_number(a));
     else
         printf("n/a");
-    return 0;
 }
 
-int test_char_code_decode(int argc, char *argv[]) {
+void test_char_code_decode(int argc, char *argv[]) {
     int result = 0;
     
     if (argc == 2) {
@@ -25,10 +37,9 @@ int test_char_code_decode(int argc, char *argv[]) {
         result = 0;
     
     if (!result) printf("n/a");
-    return 0;
 }
 
-int test_functions() {
+void test_functions() {
     double x = -1 * M_PI;
     double step = 2. * M_PI / (N - 1);
     double funB, funH;
@@ -46,14 +57,12 @@ int test_functions() {
             printf("%.7f\n", funH);
         x += step;
     }
-    return 0;
 }
 
-int test_fibonacci() {
+void test_fibonacci() {
     int n;
     if (scanf("%d", &n) == 1 && n >= 0)
         printf("%d", recursive_fibonacci(n));
     else
         printf("n/a");
-    return 0;
 }
