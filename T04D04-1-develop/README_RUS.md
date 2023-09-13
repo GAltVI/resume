@@ -4,11 +4,11 @@
 ## Contents
 
 1. [MODULES](#MODULES) \
-    1.1. [max_prime_divisor](#max-prime-divisor)  
-    1.2. [char_decode](#char-decode)  
-    1.3. [fibonacci](#fibonacci)  
-    1.4. [Quest 4. Table.](#quest-4-table)  
-    1.5. [Quest 5*. Func.](#bonus-quest-5-func)
+    1.1. [max_prime_divisor](#max-prime-divisor) \
+    1.2. [char_decode](#char-decode) \
+    1.3. [fibonacci](#fibonacci) \
+    1.4. [Quest 4. Table.](#quest-4-table) \
+    1.5. [Quest 5*. Func.](#bonus-quest-5-func) \
 
 
 
@@ -16,7 +16,7 @@
 
 ## max_prime_divisor
 
-max_prime_divisor.h | max_prime_divisor.c
+> max_prime_divisor.h | max_prime_divisor.c
 
 ***Находит наибольший простой делитель заданного целого числа `a` и печатает его на экран. Деление и операция взятия остатка от деления реализована при помощи вычитания. 
 В случае ошибки выводится "n/a".***
@@ -28,7 +28,9 @@ max_prime_divisor.h | max_prime_divisor.c
 
 
 
-## char_decode.h | char_decode.c
+## char_decode
+
+> char_decode.h | char_decode.c
 
     48 45 4C 4C 4F 77 4F 52 4C 44 00
 
