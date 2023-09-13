@@ -14,7 +14,7 @@
 
 # MODULES
 
-## max_prime_divisor
+## max-prime-divisor
 
 > max_prime_divisor.h | max_prime_divisor.c
 
