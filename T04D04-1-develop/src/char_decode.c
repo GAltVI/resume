@@ -1,14 +1,7 @@
 #include <stdio.h>
+#include "char_decode.h"
 
-#define NL '\n'
-#define SP ' '
-
-int code();
-int check_input_in_decode(char ch1, char ch2, char ch3);
-int check_hex(char ch);
-char upper_case(char ch);
-int decode();
-
+//вывод не печать шестнадцатеричного кода символов
 int code() {
     int res = 1;
     char ch1, ch2;
@@ -25,6 +18,9 @@ int code() {
     return res;
 }
 
+//проверка входных данных при декодировании
+///ch1, ch2 - должны принадлежать множеству H = {0-9, a-f, A-F} 
+///ch3 - пробел или перевод строки
 int check_input_in_decode(char ch1, char ch2, char ch3) {
     int res = 1;
     if (!check_hex(ch1) || !check_hex(ch2) || (ch3 != SP && ch3 != NL)) res = 0;
@@ -38,11 +34,13 @@ int check_hex(char ch) {
     return res;
 }
 
+//перевод в верхний регистр
 char upper_case(char ch) {
     if (ch >= 'a' && ch <= 'f') ch -= 32;
     return ch;
 }
 
+//декодирование
 int decode() {
     int res = 1;
     char ch1, ch2, ch3;
