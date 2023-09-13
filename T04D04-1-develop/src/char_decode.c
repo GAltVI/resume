@@ -9,22 +9,6 @@ int check_hex(char ch);
 char upper_case(char ch);
 int decode();
 
-int main(int argc, char *argv[]) {
-    int result = 0;
-    
-    if (argc == 2) {
-        switch (*argv[1]) {
-            case '0': result = code(); break;
-            case '1': result = decode(); break;
-            default: result = 0; break;
-        }
-    } else
-        result = 0;
-    
-    if (!result) printf("n/a");
-    return 0;
-}
-
 int code() {
     int res = 1;
     char ch1, ch2;
