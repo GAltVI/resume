@@ -1,27 +1,14 @@
 # T04D04
 The russian version of the task can be found in the repository.
 
-You can find some useful video materials [here](https://edu.21-school.ru/video/selection/15cb6428-234a-4bd3-9612-1c743554ebea).
-
-![day4_door](misc/eng/images/day4_door.png)
-  
-
 ## Contents
 
-0. [Preamble](#preamble)
-1. [Chapter I](#chapter-i) \
-    1.1. [Level 1. Room 4.](#level-1-room-4)
-2. [Chapter II](#chapter-ii) \
-    2.1 [List 1.](#list-1) \
-    2.2 [List 2.](#list-2) \
-    2.3 [List 3.](#list-3) 
-3. [Chapter III](#chapter-iii) \
-    3.1. [Quest 1. Basic control structures. Tom Kilburn.](#quest-1-basic-control-structures-tom-kilburn)  
-    3.2. [Quest 2. Basic control structures. Some problems with symbols.](#quest-2-basic-control-structures-some-problems-with-symbols)  
-    3.3. [Quest 3. Recursive.](#quest-3-recursive)  
-    3.4. [Quest 4. Table.](#quest-4-table)  
-    3.5. [Quest 5*. Func.](#bonus-quest-5-func)
-4. [Chapter IV](#chapter-iv)
+1. [Chapter III](#chapter-iii) \
+    1.1. [Quest 1. Basic control structures. Tom Kilburn.](#quest-1-basic-control-structures-tom-kilburn)  
+    1.2. [Quest 2. Basic control structures. Some problems with symbols.](#quest-2-basic-control-structures-some-problems-with-symbols)  
+    1.3. [Quest 3. Recursive.](#quest-3-recursive)  
+    1.4. [Quest 4. Table.](#quest-4-table)  
+    1.5. [Quest 5*. Func.](#bonus-quest-5-func)
 
 
 # Chapter III
