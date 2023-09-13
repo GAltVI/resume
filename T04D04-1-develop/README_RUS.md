@@ -3,7 +3,7 @@
 
 ## Contents
 
-1. [MODULES](#chapter-iii) \
+1. [MODULES](#MODULES) \
     1.1. [max_prime_divisor](#max-prime-divisor)  
     1.2. [char_decode](#char-decode)  
     1.3. [fibonacci](#fibonacci)  
@@ -14,7 +14,9 @@
 
 # MODULES
 
-## max_prime_divisor.h | max_prime_divisor.c
+## max_prime_divisor
+
+max_prime_divisor.h | max_prime_divisor.c
 
 ***Находит наибольший простой делитель заданного целого числа `a` и печатает его на экран. Деление и операция взятия остатка от деления реализована при помощи вычитания. 
 В случае ошибки выводится "n/a".***
@@ -23,6 +25,7 @@
 | ------ | ------ |
 | 100 | 5 |
 | -4 | 2 |
+
 
 
 ## char_decode.h | char_decode.c
@@ -41,6 +44,7 @@
 | 1 | 48454C4C4F | n/a |
 
 
+
 ## fibonacci.h | fibonacci.c
 
     46 49 42 4F 4E 41 43 43 49 32 31
@@ -51,6 +55,7 @@
 | Входные данные | Выходные данные |
 | ------ | ------ |
 | 21 | 10946 |
+
 
 
 ## ABH_functions.h | ABH_functions.c
@@ -77,6 +82,7 @@
 
 -1.3026116 | 0.3708103 | 0.3061966 | 0.5893457<br/>
 -1.1493632 | 0.4308421 | 0.4310262 | 0.7569818
+
 
 
 ## Bonus Quest 5*. Func.
