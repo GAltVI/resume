@@ -4,7 +4,7 @@
 ## Contents
 
 1. [MODULES](#MODULES) \
- 1.1. [max_prime_divisor](#max-prime-divisor) \
+ 1.1. [max prime divisor](#max-prime-divisor) \
  1.2. [char_decode](#char-decode) \
  1.3. [fibonacci](#fibonacci) \
  1.4. [Quest 4. Table.](#quest-4-table) \
@@ -14,7 +14,7 @@
 
 # MODULES
 
-## max-prime-divisor
+## max prime divisor
 
 > max_prime_divisor.h | max_prime_divisor.c
 
