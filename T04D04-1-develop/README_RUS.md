@@ -3,7 +3,7 @@
 
 ## Contents
 
-1. [MODULES](#MODULES) \
+1. [MODULES](#MODULES) 
     1.1. [max_prime_divisor](#max-prime-divisor) \
     1.2. [char_decode](#char-decode) \
     1.3. [fibonacci](#fibonacci) \
