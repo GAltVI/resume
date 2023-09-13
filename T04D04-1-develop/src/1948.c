@@ -13,6 +13,7 @@ int main() {
     return 0;
 }
 
+//максимальный простой делитель числа a
 int max_prime_number(int a) {
     if (a < 0) a *= -1;
     int pn = a;
@@ -35,6 +36,7 @@ int max_prime_number(int a) {
     return mpn;
 }
 
+//остаток от деления a на b (a % b)
 int euclid_div(int a, int b) {
     int res = a;
     while (res >= b) {
@@ -43,7 +45,12 @@ int euclid_div(int a, int b) {
     return res;
 }
 
+//проверка на делимость числа a на b
+///#in: a - делимое целое
+///     b - делитель целое
+///#out: b - если делитель
+///      0 - иначе
 int div(int a, int b) {
-    if (euclid_div(a, b)) return b;
+    if (b && euclid_div(a, b)) return b;
     return 0;
 }
