@@ -1,4 +1,4 @@
-# T04D04
+# T04
 The russian version of the task can be found in the repository.
 
 ## Contents
