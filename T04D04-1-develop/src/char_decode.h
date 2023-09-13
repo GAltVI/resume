@@ -1,5 +1,5 @@
-#ifndef H_MAX_PRIME_DEVISOR
-#define H_MAX_PRIME_DEVISOR
+#ifndef H_CHAR_DECODE
+#define H_CHAR_DECODE
 
 #define NL '\n'
 #define SP ' '
