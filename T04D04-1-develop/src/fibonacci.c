@@ -1,8 +1,5 @@
 #include <stdio.h>
 
-int recursive_fibonacci(int i);
-
-
 int recursive_fibonacci(int i) {
     if (i == 0)
         return 0;
