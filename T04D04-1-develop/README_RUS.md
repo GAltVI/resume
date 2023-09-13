@@ -14,7 +14,7 @@
 
 # MODULES
 
-## max_prime_divisor.h<br/>max_prime_divisor.c
+## max_prime_divisor.h | max_prime_divisor.c
 
 ***Находит наибольший простой делитель заданного целого числа `a` и печатает его на экран. Деление и операция взятия остатка от деления реализована при помощи вычитания. 
 В случае ошибки выводится "n/a".***
@@ -25,8 +25,7 @@
 | -4 | 2 |
 
 
-## char_decode.h
-## char_decode.c
+## char_decode.h | char_decode.c
 
     48 45 4C 4C 4F 77 4F 52 4C 44 00
 
@@ -42,8 +41,7 @@
 | 1 | 48454C4C4F | n/a |
 
 
-## fibonacci.h
-## fibonacci.c
+## fibonacci.h | fibonacci.c
 
     46 49 42 4F 4E 41 43 43 49 32 31
 
@@ -55,8 +53,7 @@
 | 21 | 10946 |
 
 
-## ABH_functions.h
-## ABH_functions.c
+## ABH_functions.h | ABH_functions.c
 
 Верзьера Аньези с единичным диаметром: \
 ![Верзьера Аньези](misc/images/va.png) 
