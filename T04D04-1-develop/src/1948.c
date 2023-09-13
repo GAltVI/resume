@@ -4,15 +4,6 @@ int max_prime_number(int a);
 int euclid_div(int a, int b);
 int div(int a, int b);
 
-int main() {
-    int a = 0;
-    if (scanf("%d", &a) == 1 && a != 0)
-        printf("%d", max_prime_number(a));
-    else
-        printf("n/a");
-    return 0;
-}
-
 //максимальный простой делитель числа a
 int max_prime_number(int a) {
     if (a < 0) a *= -1;
