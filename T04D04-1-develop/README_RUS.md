@@ -8,7 +8,7 @@
     1.2. [char_decode](#char-decode) \
     1.3. [fibonacci](#fibonacci) \
     1.4. [Quest 4. Table.](#quest-4-table) \
-    1.5. [Quest 5*. Func.](#bonus-quest-5-func) \
+    1.5. [Quest 5*. Func.](#bonus-quest-5-func) 
 
 
 
