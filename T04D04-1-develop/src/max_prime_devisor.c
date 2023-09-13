@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-int max_prime_number(int a);
+int max_prime_divisor(int a);
 int euclid_div(int a, int b);
 int div(int a, int b);
 
 //максимальный простой делитель числа a
-int max_prime_number(int a) {
+int max_prime_divisor(int a) {
     if (a < 0) a *= -1;
     int pn = a;
     int mpn = a;
