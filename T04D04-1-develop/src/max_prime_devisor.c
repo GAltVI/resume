@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "max_prime_devisor.h"
+#include <stdio.h>
 
 //максимальный простой делитель числа a
 int max_prime_divisor(int a) {
