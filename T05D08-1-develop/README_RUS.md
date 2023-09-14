@@ -18,14 +18,14 @@
 ## Search.
 > int input(int *a, int *n);
 <br/>void output(int *a, int n);
-int max(int *a, int n);
-int min(int *a, int n);
-double mean(int *a, int n);
-double variance(int *a, int n);
-void squaring(int *asqr, int *a, int n);
-void search(int *a, int n, double mean_v, double variance_v);
-int even(int x);
-int sigma_rule(int x, double mean_v, double variance_v);
+<br/>int max(int *a, int n);
+<br/>int min(int *a, int n);
+<br/>double mean(int *a, int n);
+<br/>double variance(int *a, int n);
+<br/>void squaring(int *asqr, int *a, int n);
+<br/>void search(int *a, int n, double mean_v, double variance_v);
+<br/>int even(int x);
+<br/>int sigma_rule(int x, double mean_v, double variance_v);
 
 ***Программа принимает через stdin массив целых чисел и находит в нем первое вхождение числа, удовлетворяющего следующим требованиям: 
 -- четное,
