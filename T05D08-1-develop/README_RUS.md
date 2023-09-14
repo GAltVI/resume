@@ -10,7 +10,7 @@
 
 ## search
 
-> ***search.h | search.c***
+>***search.h | search.c***
 
 > int input(int *a, int *n);
 > <br/> void output(int *a, int n);
