@@ -17,7 +17,7 @@
 
 ## Search.
 > int input(int *a, int *n);
-void output(int *a, int n);
+<br/>void output(int *a, int n);
 int max(int *a, int n);
 int min(int *a, int n);
 double mean(int *a, int n);
