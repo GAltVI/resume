@@ -1,21 +1,17 @@
-# T05D08
-
-![day5_door](misc/rus/images/day5_door.png)
-
-
+# T05
 ## Contents
 
-1. [MODULES](#modules) \
- 3.1.  [Quest 1. Arguments and pointers.](#quest-1-arguments-and-pointers) \
- 3.2.  [Quest 2. Data I/O.](#quest-2-data-io) \
- 3.3.  [Quest 3. Data metrics.](#quest-3-data-metrics) \
- 3.4.  [Quest 4. Search.](#quest-4-search) 
-4. [Chapter IV](#chapter-iv)
+5. [MODULES](#modules) \
+ 5.1.  [search](#search) \
+ 5.2.  [test](#test)
 
 
 # MODULES
 
-## Search.
+## search
+
+> search.h | search.c
+
 > int input(int *a, int *n);
 > <br/> void output(int *a, int n);
 > <br/> int max(int *a, int n);
