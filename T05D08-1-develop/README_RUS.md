@@ -14,14 +14,37 @@
 
 > int input(int *a, int *n);
 > <br/> void output(int *a, int n);
+
+Ввод и вывод массива целых чисел.
+
 > <br/> int max(int *a, int n);
 > <br/> int min(int *a, int n);
+
+Поиск экстремумов (max и min) массива целых чисел.
+
 > <br/> double mean(int *a, int n);
 > <br/> double variance(int *a, int n);
-> <br/> void squaring(int *asqr, int *a, int n);
 > <br/> void search(int *a, int n, double mean_v, double variance_v);
+
+Вычисление математического ожидания и дисперсии последовательности целых чисел.
+ 
+> <br/> void squaring(int *asqr, int *a, int n);
+
+Возведение в квадрат последовательности целых чисел.
+
 > <br/> int even(int x);
+
+Проверка четности числа х.
+
 > <br/> int sigma_rule(int x, double mean_v, double variance_v);
+
+Проверка выполнения правила трех сигм для последовательности массива целых чисел.
+
+## test
+
+>***test.c***
+
+> int main();
 
 ***Программа принимает через stdin массив целых чисел и находит в нем первое вхождение числа, удовлетворяющего следующим требованиям: 
 <br/> -- четное,
