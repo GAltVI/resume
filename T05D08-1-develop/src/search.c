@@ -13,7 +13,7 @@
 */
 #include <math.h>
 #include <stdio.h>
-#include "search.c"
+#include "search.h"
 
 int input(int *a, int *n) {
     int result = 0;
