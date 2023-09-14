@@ -17,8 +17,6 @@ int main() {
     return 0;
 }
 
-/* This function should be kept !!! (Your AI) */
-/* But errors & bugs should be fixed         */
 void maxmin(int prob1, int prob2, int prob3, int *max, int *min) {
     *max = *min = prob1;
 
