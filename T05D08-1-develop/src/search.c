@@ -53,8 +53,8 @@ int min(int *a, int n) {
     return min;
 }
 
-long double mean(int *a, int n) {
-    long double mean = 0.;
+double mean(int *a, int n) {
+    double mean = 0.;
     if (n > 1) {
         for (int *p = a; p - a < n; p++) mean += *p;
         mean /= n;
@@ -63,8 +63,8 @@ long double mean(int *a, int n) {
     return mean;
 }
 
-long double variance(int *a, int n) {
-    long double d = 0.;
+double variance(int *a, int n) {
+    double d = 0.;
     if (n > 1) {
         int asqr[NMAX];
         squaring(asqr, a, n);
@@ -78,10 +78,10 @@ void squaring(int *asqr, int *a, int n) {
     for (int *p = a, *psqrt = asqr; p - a < n; p++, psqrt++) *psqrt = *p * *p;
 }
 
-void search(int *a, int n, long double mean_v, long double variance_v) {
+void search(int *a, int n, double mean_v, double variance_v) {
     int result = 0;
     for (int *p = a; p - a < n && result == 0; p++) {
-        if (*p != 0 && even(*p) == 0 && (long double)*p >= mean_v && sigma_rule(*p, mean_v, variance_v)) {
+        if (*p != 0 && even(*p) == 0 && (double)*p >= mean_v && sigma_rule(*p, mean_v, variance_v)) {
             printf("%d", *p);
             result = 1;
             break;
@@ -98,6 +98,8 @@ int even(int x) {
     return x;
 }
 
-int sigma_rule(int x, long double mean_v, long double variance_v) {
-    return (long double)x <= mean_v + 3. * sqrt(variance_v) ? 1 : 0;
+int sigma_rule(int x, double mean_v, double variance_v) {
+    int result = 0;
+    if ((double)x <= mean_v + 3. * sqrt(variance_v) && (double)x >= mean_v - 3. * sqrt(variance_v)) result = 1;
+    return  result;
 }
