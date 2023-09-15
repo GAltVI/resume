@@ -2,6 +2,24 @@
 #include "bignum.h"
 #include "cycle_shift.h"
 
+int input_bignum(int *buffer, int *length) {
+    int result = 0;
+    char ch = 0;
+    (*length) = 0;
+
+    for (int *p = buffer; ch != '\n' && !result; p++) {
+        if (scanf("%d%c", p, &ch) == 2 && *p >= 0 && *p <= 9 && (ch == ' ' || ch == '\n'))
+            (*length)++;
+        else {
+            result = 1;
+            (*length) = 0;
+        }
+    }
+    if (*length < 1 || *length > LEN) result = 1;
+
+    return result;
+}
+
 void sum(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length) {
     int buffNumber = get_lager_buffer(len1, len2);
 
