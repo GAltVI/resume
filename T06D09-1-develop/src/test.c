@@ -3,6 +3,7 @@
 #include "bignum.h"
 #include "several_arrays.h"
 #include "cycle_shift.h"
+#include "io_array.h"
 
 void test_sort();
 void test_bignum();
