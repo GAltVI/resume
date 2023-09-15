@@ -2,22 +2,30 @@
 
 ## Contents
 
-1. [Modules](#modules) \
- 3.1.  [sort](#sort) \
- 3.2.  [several arrays](#several-arrays) \
- 3.3.  [сyclic shift](#сyclic-shift) \
- 3.4.  [bignum { arbitrary precision arithmetic }](#bignum-{-arbitrary-precision-arithmetic-})
+6. [Modules](#modules) \
+ 6.1.  [io_array](#io_array) \  
+ 6.2.  [sort](#sort) \
+ 6.3.  [several arrays](#several-arrays) \
+ 6.4.  [сyclic shift](#сyclic-shift) \
+ 6.5.  [bignum { arbitrary precision arithmetic }](#bignum-{-arbitrary-precision-arithmetic-})
 
 # Modules
+
+## io_array
+
+>***io_array.h | io_array.c***
+
+>int input(int *buffer, int *length);
+><br/>void output(int *buffer, int length);
+
+Ввод и вывод массива целых чисел.
+
+<br/>
+
 
 ## sort
 
 >***sort.h | sort.c***
-
->int input(int *a);
-><br/>void output(int *a, int n);
-
-Ввод и вывод массива целых чисел.
 
 >void copy_arr(int *a, int *aCopy, int n);
 
@@ -51,6 +59,9 @@
 
 >***several_arrays.h | several_arrays.c***
 
+>int sum_numbers(int *buffer, int length, int *counter);
+><br/>int find_numbers(int *buffer, int length, int number, int *numbers);
+
 ***Программа принимает на вход длину массива и массив целых чисел. Выводит в stdout сумму четных элементов массива и новый сформированный массив из элементов старого, на которые делится нацело подсчитанная ранее сумма. 
 <br/>Передача массива в функцию по указателю. 
 <br/>Максимальный размер входного массива - 10. 
@@ -69,6 +80,10 @@
 
 >***сyclic_shift.h | сyclic_shift.c***
 
+>int input_shift(int *buffer, int *length, int *c);
+><br/>int cycle_shift(int *buffer, int length, int c);
+><br/>void reverse(int *buffer, int length);
+
 ***Программа ожидает на вход число `n`, массив `A` из `n` целых чисел и число `c`, на которое все элементы массива должны сдвинутся влево циклично. При этом, при отрицательном значении `c` сдвиг происходит вправо по массиву. Выводится измененный массив. 
 <br/>Передача массива в функцию по указателю. 
 <br/>Максимальный размер входного массива - 10. 
@@ -84,6 +99,20 @@
 ## bignum { arbitrary precision arithmetic }
 
 >***bignum.h | bignum.c***
+
+>int input_bignum(int *buffer, int *length);
+
+><br/>void sum(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length);
+><br/>void sum_by_shift(int *buffMAX, int lenMAX, int *buffMIN, int lenMIN, int *result, int *result_length);
+
+><br/>void sub(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length);
+><br/>void sub_by_shift(int *buffMAX, int lenMAX, int *buffMIN, int lenMIN, int *result, int *result_length);
+
+><br/>int cycle_shift(int *buffer, int length, int c);
+><br/>void reverse(int *buffer, int length);
+
+><br/>int get_lager_buffer(int len1, int len2);
+><br/>void delete_unsign_zero(int *buff, int *len);
 
 ***Программа вычисляет сумму и разность двух очень больших чисел, переданных программе на вход в виде массивов. Максимальная длина числа - 100 элементов типа int. Вводимые целые числа представляют собой десятичные цифры. В случае если вычитаемое больше уменьшаемого, в разности выводится "n/a". 
 <br/>Передача массива в функцию по указателю. 
