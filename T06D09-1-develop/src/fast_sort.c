@@ -1,30 +1,5 @@
 #include <stdio.h>
-#define N 10
-
-int input(int *a);
-void output(int *a, int n);
-void copy_arr(int *a, int *aCopy, int n);
-void quick_sort(int *l, int *r);
-void pyramid_sort(int *a, int n);
-void heapify(int *a, int n);
-void swap(int *a, int *b);
-
-int main() {
-    int data[N];
-    int dataCopy[N];
-    if (!input(data)) {
-        copy_arr(data, dataCopy, N);
-
-        quick_sort(data, data + N);
-        output(data, N);
-
-        pyramid_sort(dataCopy, N);
-        output(dataCopy, N);
-    } else
-        printf("n/a");
-
-    return 0;
-}
+#include "sort.h"
 
 int input(int *a) {
     int result = 0;
