@@ -96,7 +96,7 @@
 <br/>
 
 
-## bignum {arbitrary precision arithmetic}
+## bignum or arbitrary precision arithmetic
 
 >***bignum.h | bignum.c***
 
