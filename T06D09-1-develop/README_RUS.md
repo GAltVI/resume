@@ -3,7 +3,7 @@
 ## Contents
 
 6. [Modules](#modules) \
- 6.1.  [io_array](#io_array) \  
+ 6.1.  [io_array](#io_array) \
  6.2.  [sort](#sort) \
  6.3.  [several arrays](#several-arrays) \
  6.4.  [сyclic shift](#сyclic-shift) \
@@ -101,16 +101,12 @@
 >***bignum.h | bignum.c***
 
 >int input_bignum(int *buffer, int *length);
-
 ><br/>void sum(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length);
 ><br/>void sum_by_shift(int *buffMAX, int lenMAX, int *buffMIN, int lenMIN, int *result, int *result_length);
-
 ><br/>void sub(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length);
 ><br/>void sub_by_shift(int *buffMAX, int lenMAX, int *buffMIN, int lenMIN, int *result, int *result_length);
-
 ><br/>int cycle_shift(int *buffer, int length, int c);
 ><br/>void reverse(int *buffer, int length);
-
 ><br/>int get_lager_buffer(int len1, int len2);
 ><br/>void delete_unsign_zero(int *buff, int *len);
 
