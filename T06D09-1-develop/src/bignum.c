@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "bignum.h"
 #include "cycle_shift.h"
-#include "io_array.h"
 
 void sum(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length) {
     int buffNumber = get_lager_buffer(len1, len2);
