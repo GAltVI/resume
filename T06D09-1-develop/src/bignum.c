@@ -1,30 +1,7 @@
 #include <stdio.h>
 #include "bignum.h"
 #include "cycle_shift.h"
-
-int input(int *buffer, int *length) {
-    int result = 0;
-    char ch = 0;
-    (*length) = 0;
-
-    for (int *p = buffer; ch != '\n' && !result; p++) {
-        if (scanf("%d%c", p, &ch) == 2 && *p >= 0 && *p <= 9 && (ch == ' ' || ch == '\n'))
-            (*length)++;
-        else {
-            result = 1;
-            (*length) = 0;
-        }
-    }
-    if (*length < 1 || *length > LEN) result = 1;
-
-    return result;
-}
-
-void output(int *buffer, int length) {
-    int *p = buffer;
-    for (; p - buffer < length - 1; p++) printf("%d ", *p);
-    printf("%d\n", *p);
-}
+#include "io_array.h"
 
 void sum(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length) {
     int buffNumber = get_lager_buffer(len1, len2);
