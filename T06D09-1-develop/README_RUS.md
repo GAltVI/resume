@@ -6,7 +6,7 @@
  3.1.  [sort](#sort) \
  3.2.  [several arrays](#several-arrays) \
  3.3.  [сyclic shift](#сyclic-shift) \
- 3.4.  [bignum { arbitrary-precision arithmetic }](#bignum-{-arbitrary-precision-arithmetic-})
+ 3.4.  [bignum { arbitrary precision arithmetic }](#bignum-{-arbitrary-precision-arithmetic-})
 
 # Modules
 
@@ -27,19 +27,24 @@
 
 ><br/>int input(int *a);
 ><br/>void output(int *a, int n);
+
 Ввод и вывод массива целых чисел.
 
 ><br/>void copy_arr(int *a, int *aCopy, int n);
+
 Копирование целочисленного массива из a в aCopy.
 
 ><br/>void quick_sort(int *l, int *r);
+
 Быстрая сортировка.
 
 ><br/>void pyramid_sort(int *a, int n);
 ><br/>void heapify(int *a, int n);
+
 Пирамидальная сортировка.
 
 ><br/>void swap(int *a, int *b);
+
 Перестановка двух элементов массива.
 
 ***Программа сортирует по возрастанию массив из 10 целочисленных элементов двумя разными алгоритмами сортировки: быстрая и пирамидальная сортировки. В stdout в первой строке выводится отсортированный массив первым алгоритмом, во второй соответственно вторым алгоритмом. Передача массива в функцию по указателю. 
@@ -80,7 +85,7 @@
 <br/>
 
 
-## bignum { arbitrary-precision arithmetic }
+## bignum { arbitrary precision arithmetic }
 
 >***bignum.h | bignum.c***
 
