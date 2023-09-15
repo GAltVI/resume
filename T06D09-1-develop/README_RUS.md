@@ -19,11 +19,11 @@
 
 Ввод и вывод массива целых чисел.
 
-><br/>void copy_arr(int *a, int *aCopy, int n);
+>void copy_arr(int *a, int *aCopy, int n);
 
 Копирование целочисленного массива из a в aCopy.
 
-><br/>void quick_sort(int *l, int *r);
+>void quick_sort(int *l, int *r);
 
 Быстрая сортировка.
 
@@ -32,7 +32,7 @@
 
 Пирамидальная сортировка.
 
-><br/>void swap(int *a, int *b);
+>void swap(int *a, int *b);
 
 Перестановка двух элементов массива.
 
