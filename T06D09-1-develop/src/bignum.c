@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "bignum.h"
+#include "cycle_shift.h"
 
 int input(int *buffer, int *length) {
     int result = 0;
@@ -88,35 +89,6 @@ void sub(int *buff1, int len1, int *buff2, int len2, int *result, int *result_le
         (*result_length)++;
     }
     delete_unsign_zero(result, result_length);
-}
-
-int cycle_shift(int *buffer, int length, int c) {
-    int result = 0;
-    if (length != 0) {
-        c %= length;
-        if (c > 0) {
-            reverse(buffer, c);
-            reverse(buffer + c, length - c);
-            reverse(buffer, length);
-        } else {
-            c *= -1;
-            reverse(buffer, length - c);
-            reverse(buffer + length - c, c);
-            reverse(buffer, length);
-        }
-    } else {
-        result = 1;
-    }
-    return result;
-}
-
-void reverse(int *buffer, int length) {
-    int tmp = 0;
-    for (int i = 0, j = length - 1; i < length / 2; i++, j--) {
-        tmp = buffer[i];
-        buffer[i] = buffer[j];
-        buffer[j] = tmp;
-    }
 }
 
 int get_lager_buffer(int len1, int len2) {
