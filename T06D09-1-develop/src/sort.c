@@ -1,25 +1,6 @@
 #include <stdio.h>
 #include "sort.h"
 
-int input(int *a) {
-    int result = 0;
-    char ch;
-
-    int *p = a;
-    for (; p - a < N - 1 && !result; p++) {
-        if (scanf("%d%c", p, &ch) != 2 || ch != ' ') result = 1;
-    }
-    if (scanf("%d%c", p, &ch) != 2 || ch != '\n') result = 1;
-
-    return result;
-}
-
-void output(int *a, int n) {
-    int *p = a;
-    for (; p - a < n - 1; p++) printf("%d ", *p);
-    printf("%d\n", *p);
-}
-
 void copy_arr(int *a, int *aCopy, int n) {
     int *p = a;
     int *pCopy = aCopy;
