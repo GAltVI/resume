@@ -44,7 +44,7 @@ void test_bignum() {
     int sum_length, result_sum[LEN + 1];
     int sub_length, result_sub[LEN];
 
-    if (!input(buff1, &len1) && !input(buff2, &len2)) {
+    if (!input_bignum(buff1, &len1) && !input_bignum(buff2, &len2)) {
         delete_unsign_zero(buff1, &len1);
         delete_unsign_zero(buff2, &len2);
         printf("\n---------------------\nsum: ");
