@@ -8,7 +8,7 @@ The russian version of the task can be found in the repository.
  6.2.  [sort](#sort) \
  6.3.  [several arrays](#several-arrays) \
  6.4.  [сyclic shift](#сyclic-shift) \
- 6.5.  [bignum {arbitrary precision arithmetic}](#bignum-{arbitrary-precision-arithmetic})
+ 6.5.  [bignum or arbitrary precision arithmetic](#bignum-or-arbitrary-precision-arithmetic)
 
 # Modules
 
@@ -97,7 +97,7 @@ Note: zero is odd number.
 <br/>
 
 
-## bignum { arbitrary precision arithmetic }
+## bignum or arbitrary precision arithmetic
 
 >***bignum.h | bignum.c***
 
