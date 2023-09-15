@@ -22,16 +22,17 @@ void test_sort() {
     printf("\n===\ntest sort===\n");
     int data[N];
     int dataCopy[N];
-    if (!input(data)) {
-        copy_arr(data, dataCopy, N);
+    int n;
+    if (!input(data. &n)) {
+        copy_arr(data, dataCopy, n);
 
         printf("\n---------------------\nquick sort: ");
-        quick_sort(data, data + N);
-        output(data, N);
+        quick_sort(data, data + n);
+        output(data, n);
 
         printf("\n---------------------\npyramid sort: ");
-        pyramid_sort(dataCopy, N);
-        output(dataCopy, N);
+        pyramid_sort(dataCopy, n);
+        output(dataCopy, n);
     } else
         printf("n/a");
 }
@@ -88,7 +89,7 @@ void test_cycle_shift() {
     int data[NMAX];
     int n = 0;
     int c = 0;
-    if (!input(data, &n, &c)) {
+    if (!input_shift(data, &n, &c)) {
         if (cycle_shift(data, n, c) == 0)
             printf("\n---------------------\nresult: ");
             output(data, n);
