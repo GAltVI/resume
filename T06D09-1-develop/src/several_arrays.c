@@ -1,32 +1,5 @@
 #include <stdio.h>
-#define NMAX 10
-
-int input(int *buffer, int *length);
-void output(int *buffer, int length);
-int sum_numbers(int *buffer, int length, int *counter);
-int find_numbers(int *buffer, int length, int number, int *numbers);
-
-int main() {
-    int data[NMAX];
-    int n = 0;
-    if (!input(data, &n)) {
-        int counter = 0;
-        int number = sum_numbers(data, n, &counter);
-        if (counter) {
-            printf("%d\n", number);
-            int numbers[NMAX];
-            int numbersLength = find_numbers(data, n, number, numbers);
-            if (numbersLength)
-                output(numbers, numbersLength);
-            else
-                printf("n/a");
-        } else
-            printf("n/a");
-    } else
-        printf("n/a");
-
-    return 0;
-}
+#include "several_arrays.h"
 
 int input(int *buffer, int *length) {
     int result = 0;
