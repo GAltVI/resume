@@ -78,16 +78,15 @@ void squaring(int *asqr, int *a, int n) {
     for (int *p = a, *psqrt = asqr; p - a < n; p++, psqrt++) *psqrt = *p * *p;
 }
 
-void search(int *a, int n, double mean_v, double variance_v) {
+int search(int *a, int n, double mean_v, double variance_v) {
     int result = 0;
     for (int *p = a; p - a < n && result == 0; p++) {
         if (*p != 0 && even(*p) == 0 && (double)*p >= mean_v && sigma_rule(*p, mean_v, variance_v)) {
-            printf("%d", *p);
-            result = 1;
+            result = *p;
             break;
         }
     }
-    if (result == 0) printf("0");
+    return result;
 }
 
 int even(int x) {
