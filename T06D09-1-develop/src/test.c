@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "sort.h"
+#include "bignum.h"
+#include "several_arrays.h"
 
 void test_sort();
 void test_bignum();
