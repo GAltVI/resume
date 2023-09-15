@@ -7,7 +7,7 @@
  6.2.  [sort](#sort) \
  6.3.  [several arrays](#several-arrays) \
  6.4.  [сyclic shift](#сyclic-shift) \
- 6.5.  [bignum { arbitrary precision arithmetic }](#bignum-{-arbitrary-precision-arithmetic-}) \
+ 6.5.  [bignum {arbitrary precision arithmetic}](#bignum-{arbitrary-precision-arithmetic})
 
 # Modules
 
@@ -96,7 +96,7 @@
 <br/>
 
 
-## bignum { arbitrary precision arithmetic }
+## bignum {arbitrary precision arithmetic}
 
 >***bignum.h | bignum.c***
 
