@@ -3,22 +3,30 @@ The russian version of the task can be found in the repository.
 
 ## Contents
 
-1. [Modules](#modules) \
- 3.1.  [sort](#sort) \
- 3.2.  [several arrays](#several-arrays) \
- 3.3.  [сyclic shift](#сyclic-shift) \
- 3.4.  [bignum { arbitrary precision arithmetic }](#bignum-{-arbitrary-precision-arithmetic-})
+6. [Modules](#modules) \
+ 6.1.  [io_array](#io_array) \
+ 6.2.  [sort](#sort) \
+ 6.3.  [several arrays](#several-arrays) \
+ 6.4.  [сyclic shift](#сyclic-shift) \
+ 6.5.  [bignum {arbitrary precision arithmetic}](#bignum-{arbitrary-precision-arithmetic})
 
 # Modules
+
+## io_array
+
+>***io_array.h | io_array.c***
+
+>int input(int *buffer, int *length);
+><br/>void output(int *buffer, int length);
+
+Input and output an array of integers.
+
+<br/>
+
 
 ## sort
 
 >***sort.h | sort.c***
-
->int input(int *a);
-><br/>void output(int *a, int n);
-
-Input and output an array of integers.
 
 >void copy_arr(int *a, int *aCopy, int n);
 
@@ -52,6 +60,9 @@ Swap two elements of array.
 
 >***several_arrays.h | several_arrays.c***
 
+>int sum_numbers(int *buffer, int length, int *counter);
+><br/>int find_numbers(int *buffer, int length, int number, int *numbers);
+
 ***The program receive the array's length and an array of integers. The program output in stdout the sum of the even elements of the array and the newly formed array from the elements of the old one, by which the previously calculated sum is divided evenly. 
 <br/>Passing an array to a function by pointer. 
 <br/>The maximum size of the input array is 10. 
@@ -70,6 +81,10 @@ Note: zero is odd number.
 
 >***сyclic_shift.h | сyclic_shift.c***
 
+>int input_shift(int *buffer, int *length, int *c);
+><br/>int cycle_shift(int *buffer, int length, int c);
+><br/>void reverse(int *buffer, int length);
+
 ***The program receives a number `n`, an array `A` with `n` integers, and a number `c` by which all elements of the array is rotated to the left. If the value of `c` is negative, the shift in the array occur to the right. A modified array is expected as output.
 <br/>Passing an array to a function by pointer. 
 <br/>The maximum size of the input array is 10. 
@@ -85,6 +100,17 @@ Note: zero is odd number.
 ## bignum { arbitrary precision arithmetic }
 
 >***bignum.h | bignum.c***
+
+>int input_bignum(int *buffer, int *length);
+
+>void sum(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length);
+<br/>void sum_by_shift(int *buffMAX, int lenMAX, int *buffMIN, int lenMIN, int *result, int *result_length);
+
+>void sub(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length);
+<br/>void sub_by_shift(int *buffMAX, int lenMAX, int *buffMIN, int lenMIN, int *result, int *result_length);
+
+>int get_lager_buffer(int len1, int len2);
+<br/>void delete_unsign_zero(int *buff, int *len);
 
 ***The program returns the result of addition and subtraction of two very large numbers that were passed to the program as input in the form of arrays. Maximum number length: 100 elements of type int. The entered integers are decimal digits. If the subtrahend is higher than the minuend, "n/a" is displayed instead of the difference. 
 <br/>Passing an array to a function by pointer. 
