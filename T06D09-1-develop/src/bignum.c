@@ -1,45 +1,5 @@
 #include <stdio.h>
-
-#define LEN 100
-#define TEN 10
-
-int input(int *buffer, int *length);
-void output(int *buffer, int length);
-
-void sum(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length);
-void sum_by_shift(int *buffMAX, int lenMAX, int *buffMIN, int lenMIN, int *result, int *result_length);
-
-void sub(int *buff1, int len1, int *buff2, int len2, int *result, int *result_length);
-void sub_by_shift(int *buffMAX, int lenMAX, int *buffMIN, int lenMIN, int *result, int *result_length);
-
-int cycle_shift(int *buffer, int length, int c);
-void reverse(int *buffer, int length);
-
-int get_lager_buffer(int len1, int len2);
-void delete_unsign_zero(int *buff, int *len);
-
-int main() {
-    int len1, buff1[LEN];
-    int len2, buff2[LEN];
-    int sum_length, result_sum[LEN + 1];
-    int sub_length, result_sub[LEN];
-
-    if (!input(buff1, &len1) && !input(buff2, &len2)) {
-        delete_unsign_zero(buff1, &len1);
-        delete_unsign_zero(buff2, &len2);
-        sum(buff1, len1, buff2, len2, result_sum, &sum_length);
-        output(result_sum, sum_length);
-
-        if (len1 >= len2) {
-            sub(buff1, len1, buff2, len2, result_sub, &sub_length);
-            output(result_sub, sub_length);
-        } else
-            printf("n/a");
-    } else
-        printf("n/a");
-
-    return 0;
-}
+#include "bignum.h"
 
 int input(int *buffer, int *length) {
     int result = 0;
