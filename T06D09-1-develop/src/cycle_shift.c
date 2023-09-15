@@ -1,25 +1,5 @@
 #include <stdio.h>
-#define NMAX 10
-
-int input(int *buffer, int *length, int *c);
-void output(int *buffer, int length);
-int cycle_shift(int *buffer, int length, int c);
-void reverse(int *buffer, int length);
-
-int main() {
-    int data[NMAX];
-    int n = 0;
-    int c = 0;
-    if (!input(data, &n, &c)) {
-        if (cycle_shift(data, n, c) == 0)
-            output(data, n);
-        else
-            printf("n/a");
-    } else
-        printf("n/a");
-
-    return 0;
-}
+#include "cycle_shift.h"
 
 int input(int *buffer, int *length, int *c) {
     int result = 0;
