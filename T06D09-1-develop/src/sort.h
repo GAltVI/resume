@@ -3,8 +3,6 @@
 
 #define N 10
 
-int input(int *a);
-void output(int *a, int n);
 void copy_arr(int *a, int *aCopy, int n);
 void quick_sort(int *l, int *r);
 void pyramid_sort(int *a, int n);
