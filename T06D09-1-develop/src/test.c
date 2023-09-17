@@ -19,11 +19,11 @@ int main() {
 }
 
 void test_sort() {
-    printf("\n===\ntest sort===\n");
+    printf("\n===test sort===\n");
     int data[N];
     int dataCopy[N];
     int n;
-    if (!input(data. &n)) {
+    if (!input(data, &n)) {
         copy_arr(data, dataCopy, n);
 
         printf("\n---------------------\nquick sort: ");
@@ -38,7 +38,7 @@ void test_sort() {
 }
 
 void test_bignum() {
-    printf("\n===\ntest bignum===\n");
+    printf("\n===test bignum===\n");
     int len1, buff1[LEN];
     int len2, buff2[LEN];
     int sum_length, result_sum[LEN + 1];
@@ -62,7 +62,7 @@ void test_bignum() {
 }
 
 void test_several_arrays() {
-    printf("\n===\ntest several arrays===\n");
+    printf("\n===test several arrays===\n");
     int data[NMAX];
     int n = 0;
     if (!input(data, &n)) {
@@ -85,14 +85,15 @@ void test_several_arrays() {
 }
 
 void test_cycle_shift() {
-    printf("\n===\ntest cycle shift===\n");
+    printf("\n===test cycle shift===\n");
     int data[NMAX];
     int n = 0;
     int c = 0;
     if (!input_shift(data, &n, &c)) {
-        if (cycle_shift(data, n, c) == 0)
+        if (cycle_shift(data, n, c) == 0){
             printf("\n---------------------\nresult: ");
             output(data, n);
+        }
         else
             printf("n/a");
     } else
