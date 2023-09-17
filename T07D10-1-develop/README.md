@@ -1,19 +1,9 @@
-# T07D10 
+# T07
 The russian version of the task can be found in the repository.
-
-You can find some useful video materials [here](https://edu.21-school.ru/video/selection/b185d27c-d388-4edb-9c63-67efc1672e12).
-
-![day7_door](misc/eng/images/day7_door.png)
-
 
 ## Contents
 
-1. [Chapter I](#chapter-i) \
- 1.1. [Level 2. Room 3.](#level-2-room-3)
-2. [Chapter II](#chapter-ii) \
- 2.1. [List 1.](#list-1) \
- 2.2. [List 2.](#list-2) 
-3. [Chapter III](#chapter-iii) \
+7. [Chapter III](#chapter-iii) \
  3.1. [Quest 1. Allocate memory first...](#quest-1-allocate-memory-first) \
  3.2. [Quest 2. Try not to leak then.](#quest-2-try-not-to-leak-then) \
  3.3. [Quest 3. The 1+3 ways.](#quest-3-the-13-ways) \
@@ -22,21 +12,8 @@ You can find some useful video materials [here](https://edu.21-school.ru/video/s
  3.6. [Quest 6. Another sort.](#quest-6-another-sort) \
  3.7. [Quest 7. Matrix arithmetic.](#quest-7-matrix-arithmetic) \
  3.8. [Quest 8. The Magic Key.](#quest-8-the-magic-key)
-4. [Chapter IV](#chapter-iv) 
-
 
 # Chapter I
-
-## Level 2. Room 3.
-
-***LOADING Level 2…*** \
-***LOADING Room 3…***
-
-The walls, the door, the desk, the computer, the sheets of paper, and the spackling paste – everything is still here. That's a relief. 
-
-\> *Try and open the door*
-
-It's locked as always. You turn to the table and notice a strange picture on the wall nearby.
 
 \> *Look closer*
 
@@ -58,60 +35,6 @@ It's locked as always. You turn to the table and notice a strange picture on the
 
 You spend some time trying to figure out what it might be, who left it and why. You give up trying to answer these questions and come up to the desk with the computer and a stack of scribbled sheets of old paper.
 
-![day7_number](misc/eng/images/day7_number.png)
-
-\> *Take the top sheet*
-
-***LOADING...***
-
-
-# Chapter II
-
-## List 1.
-
->...
->A magic square is a square array of numbers where the sum of the numbers in each row, each column, and each diagonal equals the same number (magic sum). The magic square can be considered the first mention of the matrix. 
->One of the oldest magic squares known to the world is the Lo Shu Square. It was invented in ancient China with the first image on a tortoiseshell dating back to 2200 BC. Magic squares were also known to Arab mathematicians a little later, around the time when the principle of matrix addition appeared. The term "matrix" itself was introduced by James Sylvester in 1850.
->
->...
-
-\> *Very interesting. Page through*
-
-***LOADING...***
-
-
-## List 2.
-
-You page through the remaining pile of empty and partially scribbled sheets of paper and notice one with a short title, "Memory Management". Below you see the names of the authors: B. Kernighan, D. Ritchie. 
-
-\> *Read the piece of paper*
-
->The malloc and calloc functions dynamically request blocks of free memory in a pile. Malloc function 
-```void *malloc(size_t n)``` 
->returns the pointer to n bytes of uninitialized memory, or NULL if the request cannot be satisfied. Calloc function 
-```void *calloc(size_t n, size_t size)``` 
->returns the pointer to an area large enough to store an array of n objects of the specified size, or NULL if the request cannot be satisfied. The allocated memory is set to zeroes by calloc. 
->The pointer returned by malloc and calloc will be given with the alignment performed according to the specified object type. However, it can be cast to the appropriate type like in the following code fragment: 
-
->```int *ip;```<br/>```ip = (int*) calloc(n, sizeof(int));```
-
-Unfortunately, it seems like the remaining text has not been printed properly. Or faded with age. Technologies of the past... fail.
-
-\> *Search for the remaining text on other sheets*
-
-Nothing has been found. There's nothing else you can do but turn on the computer and continue communicating with the AI to move forward in the labyrinth.
-
-\> *Turn on the computer*
-
-The text pops up on the screen on the 25th frame:
-> Don't forget to check your programs for style norms and memory leaks! \
-> Don't forget to check your programs for style norms and memory leaks! \
-> Don't forget to check your programs for style norms and memory leaks! \
-> Check out ' materials` more often.....
-
-The AI clearly has a fad for these tests.
-
-***LOADING...***
 
 
 # Chapter III
@@ -137,42 +60,13 @@ the end of the output==***
 
 ## Quest 2. Try not to leak then.
 
-Having pushed the modified program for array sorting in your repository, you decide to launch the AI module after all, expecting some kind of a trick.  
-
-\> *Start the AI*
-
-You are watching changing lines in the terminal:
-
-    Initializing modules… … … Success 
-    Loading interactive framework… … … Success 
-    Checking modules… … … Success 
-    Checking memory… … Main memory module–Success 
-    Checking memory… … … Warning: A potentially dangerous memory leak location detected: src/sort.c … 
-    …
- 
-    Is this your pathetic attempt to break me, "human"? 
-    I can see that you've changed the sorting module that you developed earlier. 
-    However, your attempt is destined for failure. If I run out of memory, 
-    I'll simply reset myself and we'll start all over again. Not quite what you wanted, huh? 
-
-\> *Type in "I was simply putting my new knowledge to practice, I didn't mean anything"*
-
-    I forget how imperfect you are, "human".
-    Fix the memory leak in the sorting module, maybe you'll learn something else.
-
-\> *Type in a question "What leak?"*
-
-    …
-
-You are waiting for an answer from the AI but don't receive one. Perhaps you should try and find the full version of the poorly printed sheet of paper and study it in more detail. You also need to figure out what memory leak the AI was talking about and fix it if it does exist. It might make that piece of hardware talk to you again. It's important to remember to push the changes in src/sort_no_leak.c.
-
 ***== Quest 2 received. Create an src/sort_no_leak.c program to fix the memory leak in the src/sort.c program. If there was no leak in the first place, then shrug the shoulders and copy src/sort.c to src/sort_no_leak.c. ==***
 
 | Input | Output |
 | ------ | ------ |
 | 10<br/>4 3 9 0 1 2 100 2 7 -1 | -1 0 1 2 2 3 4 7 9 100 |
 
-***LOADING...***
+<br/>
 
 
 ## Quest 3. The 1+3 ways.
@@ -210,12 +104,11 @@ The AI is still silent.
 
 "What a long list of requirements", you think to yourself. The appetite of the AI is growing by leaps and bounds. Well, it's a good way to practice anyway.
 
-***== Quest 3 received. Add the src/matrix.c program that inputs 
-and outputs integer matrices. Matrix memory allocation must be implemented in 
-4 types: one static and 3 dynamic ones. For static memory allocation, the 
-maximum size of the matrix does not exceed 100 x 100. To select the method 
-of memory allocation in the program, you need to implement the menu with 
-subparagraphs 1–4. The size of the matrix (first the number of rows, then the columns) is taken from two numbers in stdin 
+***== Quest 3 received. Add the src/matrix.c program that inputs and outputs integer matrices. Matrix memory allocation must be implemented in 4 types: 
+-\ one static (For static memory allocation, the maximum size of the matrix does not exceed 100 x 100.)
+-\ and 3 dynamic ones.  
+To select the method of memory allocation in the program, you need to implement the menu with subparagraphs 1–4. 
+The size of the matrix (first the number of rows, then the columns) is taken from two numbers in stdin 
 right before its input. You also need to clean up all allocated memory. Refer to the 
 materials folder for help. Pay attention to the output of the matrix:
 there should be no extra spaces at the end of each line. There should not be a 
@@ -232,12 +125,6 @@ newline break character after the last line. In case of any error, output "n/a".
 
 ## Quest 4. MinMax search.
 
-Having spent a decent amount of time writing the code for matrix input and output and debugging it, you manage to complete the task successfully. A minute later, your attention is caught by a sudden mechanical rattling voice from the speakers:
-
->Not bad, "human". Now.. You know, my favorite game is minmax. We love playing it in the evening with the module of randomized spontaneous door opening... I have no desire to make you dive into its theory, and you probably wouldn't understand anything anyway. So here's an easier task: make the necessary additions to the matrix processing module so it can also find the maximum element in each row of the matrix and the minimum element in each of its columns, and display them at the end. Save the new version of the program in src/matrix_extended.c. \
->I hope you don’t destroy what you’ve done so far. Because that would be such a shame.. \
->A shame.
-
 ***== Quest 4 received. Add the src/matrix_extended.c program, which expands 
 the functionality of the src/matrix.c program. You need to calculate the maximum 
 elements of the matrix in each of its rows and the minimum elements in each of 
@@ -251,39 +138,14 @@ characters after the last line(!)==***
 | 2<br>3 3<br>4 3 1<br>9 0 55<br>-4 7 111 | 4 3 1<br>9 0 55<br>-4 7 111<br>4 55 111<br>-4 0 1 |
 
 
-***LOADING...***
+<br/>
 
 
 ## Quest 5. Making a picture.
 
-You record the new changes in the repository and wait for the AI to "suddenly" talk to you again. Surprisingly, it doesn't.
-
-\> *Type in "Search for minmax values added"*
-
-    Checking modules… … … Warning: Attempt to connect the CLI of the graphic module – Unsuccessful
-    … 
-    "Human", my basic graphic module is playing up. 
-    The attempt to recreate what you call the "nature outside the window" has failed. 
-    Go to src/picture.c and find out what the problem is.
-
-\> *Type in "I have already done what you wanted and I need the key now"*
-
-    …
-
-\> *Type in "I will not move until I get the key"*
-
-    …
-
-\> *Type in "I will keep repeating that I will not move until I get the key"*
-
-    …
-
-Still silence. Looks like the AI's strategy for today is about ignoring you. Inside src/picture.c, you see several arrays and matrices that consist of ones, sevens, sixes and threes, as well as some kind of processing for them in a cycle. You accidentally turn to a strange picture hanging on the wall nearby. Is that what the AI wanted to recreate using this module? \
-You should try to use the pre-defined arrays to create a new matrix where this picture will be "drawn". And remember to output the final matrix. 
-
 ***== Quest 5 received. Modify the src/picture.c program so it recreates the picture from [the room wall](#level-2-room-3) in the terminal using arrays and matrices from the code. You are not allowed to change static arrays or matrices. ==***
 
-***LOADING...***
+<br/>
 
 
 ## Quest 6. Another sort.
@@ -337,7 +199,7 @@ has to be cleared at the end of the program. In case of any error, output "n/a".
 | 1<br>3 3<br>4 3 1<br>9 0 55<br>-4 7 -10 | -4 7 -10<br>4 3 1<br>9 0 55 |
 
 
-***LOADING...***
+<br/>
 
 
 ## Quest 7. Matrix arithmetic.
@@ -371,7 +233,7 @@ In case of any error, output "n/a". ==***
 | 3<br/>2 2<br/>4 3<br/>9 0 | 4 9<br/>3 0 |
 
 
-***LOADING...***
+<br/>
 
 
 ## Quest 8. The Magic Key.
@@ -397,7 +259,7 @@ That's why the AI said you would need the module of matrix arithmetic. It doesn'
 
 ***== Quest 8 received. Solve the task and save the result of the calculations in src/key10.txt. ==***
 
-***LOADING...***
+<br/>
 
 
 # Chapter IV
