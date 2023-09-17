@@ -3,7 +3,9 @@
 #include "io_array.h"
 
 int input_shift(int *buffer, int *length, int *c) {
-    if (!input(int *buffer, int *length))
+    int result = 0;
+    char ch;
+    if (!input(buffer, length)) {
         if (scanf("%d%c", c, &ch) != 2 || ch != '\n') result = 1;
     } else
         result = 1;
