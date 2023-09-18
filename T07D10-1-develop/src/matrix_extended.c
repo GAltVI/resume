@@ -16,7 +16,7 @@ printf("\n---min in columns---\n");
         for (int i = 1; i < m; i++)
             if (matrix[i][j] < min[j]) min[j] = matrix[i][j];
     }
-    output(min, 0, n);
+    output(min, n, 0);
 }
 
 int static_array(int m, int n) {
@@ -35,6 +35,9 @@ int static_array(int m, int n) {
 
             if (i != m - 1) printf("\n");
         }
+
+        int min[N], max[M];
+        minmax(matrix, m, n, min, max);
     }
 
     return result;
@@ -54,7 +57,12 @@ int pointer_array_within_one_buffer(int m, int n) {
                 if (scanf("%d", &matrix[i][j]) != 1) result = 1;
         }
 
-        if (result == 0) output(matrix, m, n);
+        if (result == 0) {
+            output(matrix, m, n);
+
+            int min[N], max[M];
+            minmax(matrix, m, n, min, max);
+        }
     }
 
     free(matrix);
@@ -75,7 +83,12 @@ int pointer_array_of_arrays(int m, int n) {
                 if (scanf("%d", &matrix[i][j]) != 1) result = 1;
         }
 
-        if (result == 0) output(matrix, m, n);
+        if (result == 0) {
+            output(matrix, m, n);
+            
+            int min[N], max[M];
+            minmax(matrix, m, n, min, max);
+        }
     } else
         result = 1;
 
@@ -98,7 +111,12 @@ int pointer_array_of_segments(int m, int n) {
                 if (scanf("%d", &ptr[i][j]) != 1) result = 1;
         }
 
-        if (result == 0) output(ptr, m, n);
+        if (result == 0) {
+            output(ptr, m, n);
+         
+            int min[N], max[M];
+            minmax(matrix, m, n, min, max);
+        }
     } else
         result = 1;
 
