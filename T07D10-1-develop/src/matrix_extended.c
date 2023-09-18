@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "matrix.h"
+#include "matrix_extended.h"
 
 void minmax(int **matrix, int m, int n, int *min, int *max) {
 printf("\n---max in rows---\n");
