@@ -1,49 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define M 100
-#define N 100
-#define STATIC_ARRAY 1
-#define POINTERS_WITHIN_ONE_BUFFER 2
-#define POINTERS_TO_ARRAYS 3
-#define POINTERS_TO_SEGMENTS 4
-#define NA "n/a"
+#include "matrix.h"
 
-int static_array(int m, int n);
-int pointer_array_within_one_buffer(int m, int n);
-int pointer_array_of_arrays(int m, int n);
-int pointer_array_of_segments(int m, int n);
-
-void output(int **matrix, int m, int n);
-
-int main() {
-    int mode = 0;
-    int m, n;
-    if (scanf("%d", &mode) == 1 && mode > 0 && mode <= 4) {
-        if (scanf("%d %d", &m, &n) == 2 && n > 0 && n <= N && m > 0 && m <= M) {
-            int result = 0;
-            switch (mode) {
-                case STATIC_ARRAY:
-                    result = static_array(m, n);
-                    break;
-                case POINTERS_TO_SEGMENTS:
-                    result = pointer_array_of_segments(m, n);
-                    break;
-                case POINTERS_WITHIN_ONE_BUFFER:
-                    result = pointer_array_within_one_buffer(m, n);
-                    break;
-                case POINTERS_TO_ARRAYS:
-                    result = pointer_array_of_arrays(m, n);
-                    break;
-                default:
-                    printf(NA);
-                    break;
-            }
-            if (result == 1) printf(NA);
-        } else
-            printf(NA);
-    } else
-        printf(NA);
-    return 0;
+void minmax(int **matrix, int m, int n, int *min, int *max) {
+printf("\n---max in rows---\n");
+    for (int i = 0; i < m; i++) {
+        max[i] = matrix[i][0];
+        for (int j = 1; j < n; j++)
+            if (matrix[i][j] > max[i]) max[i] = matrix[i][j];
+    }
+    output(max, m, 0);
+printf("\n---min in columns---\n");
+    for (int j = 0; j < n; j++) {
+        min[j] = matrix[0][j];
+        for (int i = 1; i < m; i++)
+            if (matrix[i][j] < min[j]) min[j] = matrix[i][j];
+    }
+    output(min, 0, n);
 }
 
 int static_array(int m, int n) {
@@ -136,10 +109,10 @@ int pointer_array_of_segments(int m, int n) {
 
 void output(int **matrix, int m, int n) {
     for (int i = 0; i < m; i++) {
-        int j = 0;
-        for (; j < n - 1; j++) printf("%d ", matrix[i][j]);
-        printf("%d", matrix[i][j]);
-
+        for (int j = 0; j < n; j++) {
+            printf("%d", matrix[i][j]);
+            if (j != n - 1) printf(" ");
+        }
         if (i != m - 1) printf("\n");
     }
 }
