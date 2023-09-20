@@ -115,7 +115,7 @@ int pointer_array_of_segments(int m, int n) {
             output(ptr, m, n);
          
             int min[N], max[M];
-            minmax(matrix, m, n, min, max);
+            minmax(ptr, m, n, min, max);
         }
     } else
         result = 1;
