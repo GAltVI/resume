@@ -2,30 +2,60 @@
 #include <stdlib.h>
 #include "matrix_extended.h"
 
+//matrix_sort.c
+void matrix_sort(int **matrix, int m, int n) {
+    printf("\n---sum in rows---\n");
+    int sum[M];
+    for (int i = 0; i < m; i++) {
+        sum[i] = 0;
+        for (int j = 0; j < n; j++)
+            sum[i] += matrix[i][j];
+            
+        printf("%d : %d\n", i, sum[i]);
+    }
+    printf("\n---sort---\n");
+    for (int k = 0; k < m; k++) {
+        int index = k;
+        for (int i = k + 1; i < m; i++) {
+            if (sum[i] < sum[k]) {
+                int tmp = sum[i];
+                sum[i] = sum[k];
+                sum[k] = tmp;
+                
+                for (int j = 0; j < n; j++) {
+                    tmp = matrix[i][j];
+                    matrix[i][j] = matrix[k][j];
+                    matrix[k][j] = tmp;
+                }   
+            }
+        }
+    }
+
+    output_matrix(matrix, m, n);
+}
+
 void minmax(int **matrix, int m, int n, int *min, int *max) {
-printf("\n---max in rows---\n");
+    printf("\n---max in rows---\n");
     for (int i = 0; i < m; i++) {
         max[i] = matrix[i][0];
         for (int j = 1; j < n; j++)
             if (matrix[i][j] > max[i]) max[i] = matrix[i][j];
     }
-    output(max, m, 0);
-printf("\n---min in columns---\n");
+    output_vector(max, m);
+    printf("\n---min in columns---\n");
     for (int j = 0; j < n; j++) {
         min[j] = matrix[0][j];
         for (int i = 1; i < m; i++)
             if (matrix[i][j] < min[j]) min[j] = matrix[i][j];
     }
-    output(min, n, 0);
+    output_vector(min, n);
 }
 
 int static_array(int m, int n) {
     int result = 0;
     int matrix[M][N];
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++)
-            if (scanf("%d", &matrix[i][j]) != 1) result = 1;
-    }
+    
+    result = input_static(matrix, m, n);
 
     if (result == 0) {
         for (int i = 0; i < m; i++) {
@@ -36,32 +66,47 @@ int static_array(int m, int n) {
             if (i != m - 1) printf("\n");
         }
 
-        int min[N], max[M];
-        minmax(matrix, m, n, min, max);
     }
 
     return result;
 }
 
+int input_static(int matrix[M][N], int m, int n) {
+    int result = 0;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++)
+            if (scanf("%d", &matrix[i][j]) != 1) result = 1;
+    }
+    return result;
+}
+
+void allocate_memory_1(int*** matrix, int m, int n) {
+    *matrix = malloc(m * n * sizeof(int) + m * sizeof(int *));
+    if (*matrix != NULL) {
+        int *ptr = (int *)(*matrix + m);
+        for (int i = 0; i < m; i++) {
+            (*matrix)[i] = ptr + (n)*i;
+        }
+    }
+}
+
 int pointer_array_within_one_buffer(int m, int n) {
     int result = 0;
-
-    int **matrix = malloc(m * n * sizeof(int) + m * sizeof(int *));
-
+    
+    int **matrix;
+    allocate_memory_1(&matrix, m, n);
+    
     if (matrix != NULL) {
-        int *ptr = (int *)(matrix + m);
-        for (int i = 0; i < m; i++) matrix[i] = ptr + (n)*i;
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++)
-                if (scanf("%d", &matrix[i][j]) != 1) result = 1;
-        }
+        result = input_dynamic(matrix, m, n);
 
         if (result == 0) {
-            output(matrix, m, n);
+            printf("\n===out===\n");
+            output_matrix(matrix, m, n);
 
             int min[N], max[M];
             minmax(matrix, m, n, min, max);
+
+            matrix_sort(matrix, m, n);
         }
     }
 
@@ -69,25 +114,43 @@ int pointer_array_within_one_buffer(int m, int n) {
     return result;
 }
 
+int input_dynamic(int** matrix, int m, int n) {
+    int result = 0;
+    for (int i = 0; i < m; i++) {
+        //printf("%d: ", i);
+        for (int j = 0; j < n; j++) {
+            //printf("%d ", j);
+            if (scanf("%d", &matrix[i][j]) != 1) result = 1;
+        }
+        //printf("\n");
+    }
+    return result;
+}
+
+void allocate_memory_2(int*** matrix, int m, int n) {
+    *matrix = malloc(m * sizeof(int *));
+    for (int i = 0; i < m; i++) {
+        (*matrix)[i] = malloc(n * sizeof(int));
+    }
+}
+
 int pointer_array_of_arrays(int m, int n) {
     int result = 0;
 
-    int **matrix = malloc(m * sizeof(int *));
-    for (int i = 0; i < m; i++) {
-        matrix[i] = malloc(n * sizeof(int));
-    }
+    int **matrix;
+    allocate_memory_2(&matrix, m, n);
 
     if (matrix != NULL) {
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++)
-                if (scanf("%d", &matrix[i][j]) != 1) result = 1;
-        }
+        result = input_dynamic(matrix, m, n);
 
         if (result == 0) {
-            output(matrix, m, n);
+            printf("\n===out===\n");
+            output_matrix(matrix, m, n);
             
             int min[N], max[M];
             minmax(matrix, m, n, min, max);
+
+            matrix_sort(matrix, m, n);
         }
     } else
         result = 1;
@@ -97,40 +160,52 @@ int pointer_array_of_arrays(int m, int n) {
     return result;
 }
 
+void allocate_memory_3(int*** matrix, int **val, int m, int n) {
+    *matrix = malloc(m * sizeof(int *));
+    *val = malloc(m * n * sizeof(int));
+}
+
 int pointer_array_of_segments(int m, int n) {
     int result = 0;
 
-    int **ptr = malloc(m * sizeof(int *));
-    int *val = malloc(m * n * sizeof(int));
+    int **matrix; int *val;
+    allocate_memory_3(&matrix, &val, m, n);
 
-    if (ptr != NULL) {
-        for (int i = 0; i < m; i++) ptr[i] = val + n * i;
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++)
-                if (scanf("%d", &ptr[i][j]) != 1) result = 1;
-        }
+    if (matrix != NULL) {
+        for (int i = 0; i < m; i++) matrix[i] = val + n * i;
+        
+        result = input_dynamic(matrix, m, n);
 
         if (result == 0) {
-            output(ptr, m, n);
+            printf("\n===out===\n");
+            output_matrix(matrix, m, n);
          
             int min[N], max[M];
-            minmax(ptr, m, n, min, max);
+            minmax(matrix, m, n, min, max);
+
+            matrix_sort(matrix, m, n);
         }
     } else
         result = 1;
 
     free(val);
-    free(ptr);
+    free(matrix);
     return result;
 }
 
-void output(int **matrix, int m, int n) {
+void output_matrix(int **matrix, int m, int n) {
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
             printf("%d", matrix[i][j]);
             if (j != n - 1) printf(" ");
         }
         if (i != m - 1) printf("\n");
+    }
+}
+
+void output_vector(int *vector, int m) {
+    for (int i = 0; i < m; i++) {
+        printf("%d", vector[i]);
+        if (i != m - 1) printf(" ");
     }
 }
