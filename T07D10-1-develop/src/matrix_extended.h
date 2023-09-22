@@ -9,6 +9,9 @@
 #define POINTERS_TO_SEGMENTS 4
 #define NA "n/a"
 
+void test_matrix_extended();
+int menu_matrix_extended();
+
 void matrix_sort(int **matrix, int m, int n);
 void minmax(int **matrix, int m, int n, int *min, int *max);
 int static_array(int m, int n);

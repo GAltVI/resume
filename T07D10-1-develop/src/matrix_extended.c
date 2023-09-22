@@ -2,6 +2,44 @@
 #include <stdlib.h>
 #include "matrix_extended.h"
 
+void test_matrix_extended() {
+    printf("START > test_matrix_extended >\n");
+    int result = menu_matrix_extended();
+    if (!result) printf("\nSUCCESS :)\n");
+    else printf("\nFAIL :'(\n");
+    printf("\n\t>> END\n");
+}
+
+int menu_matrix_extended() {
+    int mode = 0;
+    int m, n;
+    if (scanf("%d", &mode) == 1 && mode > 0 && mode <= 4) {
+        if (scanf("%d %d", &m, &n) == 2 && n > 0 && n <= N && m > 0 && m <= M) {
+            int result = 0;
+            switch (mode) {
+                case STATIC_ARRAY:
+                    result = static_array(m, n);
+                    break;
+                case POINTERS_WITHIN_ONE_BUFFER:
+                    result = pointer_array_within_one_buffer(m, n);
+                    break;
+                case POINTERS_TO_ARRAYS:
+                    result = pointer_array_of_arrays(m, n);
+                    break;
+                case POINTERS_TO_SEGMENTS:
+                    result = pointer_array_of_segments(m, n);
+                    break;
+                default:
+                    printf(NA);
+                    break;
+            }
+            if (result == 1) printf(NA);
+        } else
+            printf(NA);
+    } else printf(NA);
+    return 0;
+}
+
 //matrix_sort.c
 void matrix_sort(int **matrix, int m, int n) {
     printf("\n---sum in rows---\n");
@@ -117,12 +155,9 @@ int pointer_array_within_one_buffer(int m, int n) {
 int input_dynamic(int** matrix, int m, int n) {
     int result = 0;
     for (int i = 0; i < m; i++) {
-        //printf("%d: ", i);
         for (int j = 0; j < n; j++) {
-            //printf("%d ", j);
             if (scanf("%d", &matrix[i][j]) != 1) result = 1;
         }
-        //printf("\n");
     }
     return result;
 }
@@ -199,7 +234,8 @@ void output_matrix(int **matrix, int m, int n) {
             printf("%d", matrix[i][j]);
             if (j != n - 1) printf(" ");
         }
-        if (i != m - 1) printf("\n");
+        //if (i != m - 1) 
+        printf("\n");
     }
 }
 
