@@ -33,12 +33,12 @@
     <br/><t>выделение памяти под матрицу, реализовано в 4 видах: 
          <br/>>(type 1) статический | максимальный размер матрицы не превышает 100 x 100,
          <br/>>(types 2-4) 3 динамических,
-         <br/>type 2 \: ![Alt Array of pointers to array segments within one buffer](./materials/1.jpg)
+         <br/>---<br>type 2 \: ![Alt Array of pointers to array segments within one buffer](./materials/1.jpg)
 <br/>
-         <br/>type 3 : ![Alt Array of pointers to arrays](./materials/2.jpg)
+         <br/>---<br>type 3 : ![Alt Array of pointers to arrays](./materials/2.jpg)
 <br/>
-         <br/>type 4 : ![Alt Array of pointers to segments of the second array](./materials/3.jpg)
-      <br/>для выбора способа выделения памяти реализовано меню с подпунктами 1-4 (types 1-4),
+         <br/>---<br>type 4 : ![Alt Array of pointers to segments of the second array](./materials/3.jpg)
+      <br>...<br/>для выбора способа выделения памяти реализовано меню с подпунктами 1-4 (types 1-4),
       <br/>размер матрицы (сперва количество строк, затем столбцов) принимается через два числа в stdin непосредственно до ее ввода, 
 <br/>- поиска максимальных элементов матрицы в каждой ее строке и минимальных элементов в каждом ее столбце, которые записываются в два массива,
 <br/>- сортировки матрицы так, чтобы сначала шли строки с минимальной суммой элементов, а затем с максимальной. 
