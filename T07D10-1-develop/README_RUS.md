@@ -34,7 +34,8 @@
          <br/>>(type 1) статический | максимальный размер матрицы не превышает 100 x 100,
          <br/>>(types 2-4) 3 динамических,
 ***
-        <br>type 2 \: ![Alt Array of pointers to array segments within one buffer](./materials/1.jpg)
+
+        <br/>type 2 \: ![Alt Array of pointers to array segments within one buffer](./materials/1.jpg)
 <br/>
 ***
         <br>type 3 \: ![Alt Array of pointers to arrays](./materials/2.jpg)
