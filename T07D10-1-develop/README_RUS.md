@@ -30,7 +30,7 @@
 
 ***Модуль содержит функции:
 <br/>- ввода и вывода целочисленных матриц; 
-     <br/>выделение памяти под матрицу реализовано в 4 видах: 
+<br/>   выделение памяти под матрицу реализовано в 4 видах: 
          <br/>>(type 1) статический | максимальный размер матрицы не превышает 100 x 100,
          <br/>>(types 2-4) 3 динамических,
          <br/>type 2 : ![Array of pointers to array segments within one buffer]("./materials/[DynAlloc] Array of pointers to array segments within one buffer.jpg")
