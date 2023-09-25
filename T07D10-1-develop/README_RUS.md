@@ -30,20 +30,20 @@
 
 ***Модуль содержит функции:
 <br>- ввода и вывода целочисленных матриц; 
-      выделение памяти под матрицу реализовано в 4 видах: 
-         * (type 1) статический | максимальный размер матрицы не превышает 100 x 100,
-         * (types 2-4) 3 динамических,
-         type 2 : ![Array of pointers to array segments within one buffer]("./materials/[DynAlloc] Array of pointers to array segments within one buffer.jpg")
-
-         type 3 : ![Array of pointers to arrays](".\materials\[DynAlloc] Array of pointers to arrays.jpg")
-
-         type 4 : ![Array of pointers to segments of the second array]("materials\[DynAlloc] Array of pointers to segments of the second array.jpg")
-      для выбора способа выделения памяти реализовано меню с подпунктами 1-4 (types 1-4),
-      размер матрицы (сперва количество строк, затем столбцов) принимается через два числа в stdin непосредственно до ее ввода, 
+<br>      выделение памяти под матрицу реализовано в 4 видах: 
+<br>         * (type 1) статический | максимальный размер матрицы не превышает 100 x 100,
+<br>         * (types 2-4) 3 динамических,
+<br>         type 2 : ![Array of pointers to array segments within one buffer]("./materials/[DynAlloc] Array of pointers to array segments within one buffer.jpg")
+<br>
+<br>         type 3 : ![Array of pointers to arrays](".\materials\[DynAlloc] Array of pointers to arrays.jpg")
+<br>
+<br>         type 4 : ![Array of pointers to segments of the second array]("materials\[DynAlloc] Array of pointers to segments of the second array.jpg")
+<br>      для выбора способа выделения памяти реализовано меню с подпунктами 1-4 (types 1-4),
+<br>      размер матрицы (сперва количество строк, затем столбцов) принимается через два числа в stdin непосредственно до ее ввода, 
 <br>- поиска максимальных элементов матрицы в каждой ее строке и минимальных элементов в каждом ее столбце, которые записываются в два массива,
 <br>- сортировки матрицы так, чтобы сначала шли строки с минимальной суммой элементов, а затем с максимальной. 
-На вход подаются числа N и M - размерности матрицы и NxM чисел - элементы матрицы. Память под матрицу выделяется динамически одним из 3х способов. Выбор способа выделения памяти с помощью меню. 
-В случае любой ошибки выводится "n/a".***
+<br>На вход подаются числа N и M - размерности матрицы и NxM чисел - элементы матрицы. Память под матрицу выделяется динамически одним из 3х способов. Выбор способа выделения памяти с помощью меню. 
+<br>В случае любой ошибки выводится "n/a".***
 
 | Входные данные | Выходные данные |
 | ------ | ------ |
