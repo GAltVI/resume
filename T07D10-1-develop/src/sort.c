@@ -1,13 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define NMAX 10
 
-int input(int *a, int *n);
-void output(int *a, int n);
-void sort(int *l, int *r);
-void swap(int *a, int *b);
+#include "sort.h"
 
-int main() {
+void test_sort() {
     int n = 0;
     int *data = malloc(n);
     if (!input(data, &n)) {
@@ -16,7 +12,6 @@ int main() {
     } else
         printf("n/a");
     free(data);
-    return 0;
 }
 
 int input(int *a, int *n) {

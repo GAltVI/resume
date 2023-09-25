@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#include "matrix.h"
+
+#include "sort.h"
 #include "matrix_extended.h"
 #include "matrix_arithmetic.h"
 
 void test_task_0();
 
 int main() {
-    //test_matrix_extended();
-    //test_matrix_arithmetic();
+    test_sort();
+    test_matrix_extended();
+    test_matrix_arithmetic();
 
     test_task_0();
 }
