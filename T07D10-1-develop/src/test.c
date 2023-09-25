@@ -22,7 +22,7 @@ void test_task_0() {
     in1 = create_matrix(&matrix_first, &m_first, &n_first);
     in2 = create_matrix(&matrix_second, &m_second, &n_second);
     if (!in1 && !in2) {
-        in1 = transpose(matrix_first, &m_first, &n_first);
+        in1 = transpose(&matrix_first, &m_first, &n_first);
         printf("\nAFTER after transp\n");
         output_matrix(matrix_first, m_first, n_first);
         printf("\n``````\n");

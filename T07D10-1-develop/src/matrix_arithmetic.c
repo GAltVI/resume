@@ -42,7 +42,7 @@ int menu_matrix_arithmetic() {
         case 3: //transpose
                 in = create_matrix(&matrix, &m, &n);
                 if (!in) {
-                    result = transpose(matrix, &m, &n);
+                    result = transpose(&matrix, &m, &n);
                     free(matrix);
                 }
                 break;
@@ -92,28 +92,22 @@ int sum(int **matrix_first, int m_first, int n_first, int **matrix_second, int m
     return result;
 }
 
-int transpose(int **matrix, int *m, int *n) {
+int transpose(int ***matrix, int *m, int *n) {
     int result = 0;
-    int **matrix_tmp;
-    allocate_memory_1(&matrix_tmp, *n, *m);
-    if (matrix_tmp != NULL) {
-        for (int i = 0; i < *m; i++) {
-            for (int j = 0; j < *n; j++) {
-                matrix_tmp[j][i] = matrix[i][j];
-                matrix[i][j] = 0;
-            }
+    int tmp;
+    for (int i = 0; i < *m; i++) {
+        for (int j = 0; j < *n; j++) {
+            tmp = (*matrix)[j][i];
+            (*matrix)[j][i] = (*matrix)[i][j];
+            (*matrix)[i][j] = tmp;
         }
-        
-        // printf("\n===transpose tmp===\n");
-        // output_matrix(matrix_tmp, n, m);
-        
-        int tmp = *m;
-        *m = *n;
-        *n = tmp;
-        matrix = matrix_tmp;
-        printf("\n===transpose result===\n");
-        output_matrix(matrix, *m, *n);
-    } else result = 1;
+    }
+    
+    tmp = *m;
+    *m = *n;
+    *n = tmp;
+    printf("\n===transpose result===\n");
+    output_matrix(*matrix, *m, *n);
     return result; 
 }
 
