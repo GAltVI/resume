@@ -4,10 +4,9 @@
 
 7. [Modules](#modules) \
  7.1. [sort](#sort) \
- 7.6. [matrix_extended](#matrix_extended) \
- 7.7. [matrix_arithmetic](#matrix_arithmetic) \
- 7.8. [test](#test) 
-
+ 7.2. [matrix_extended](#matrix_extended) \
+ 7.3. [matrix_arithmetic](#matrix_arithmetic) \
+ 7.4. [test](#test)
 
 # Modules
 
