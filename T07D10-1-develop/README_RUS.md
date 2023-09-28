@@ -76,10 +76,10 @@
 ## test
 
 >int main() {
-<br/>    test_sort();
-<br/>    test_matrix_extended();
-<br/>    test_matrix_arithmetic();
-<br/>    test_task_0();
+    <br/>test_sort();
+    <br/>    test_matrix_extended();
+    <br/>    test_matrix_arithmetic();
+    <br/>    test_task_0();
 <br/>}
         
 >test_sort();
