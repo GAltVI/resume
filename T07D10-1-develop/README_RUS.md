@@ -6,7 +6,7 @@
  7.1. [sort](#sort) \
  7.2. [matrix_extended](#matrix_extended) \
  7.3. [matrix_arithmetic](#matrix_arithmetic) \
- 7.4. [test](#test)
+ 7.4. [test_task_0](#test_task_0)
 
 # Modules
 
@@ -73,14 +73,32 @@
 <br/>
 
 
-## test_task_0
+## test
 
+>int main() {
+    test_sort();
+    test_matrix_extended();
+    test_matrix_arithmetic();
+
+    test_task_0();
+}
+        
+>test_sort();
+тест модуля ***sort***
+
+>test_matrix_extended();
+тест модуля ***matrix_extended***
+
+>test_matrix_arithmetic();
+тест модуля ***matrix_arithmetic***
+
+>test_task_0();
+Вычисляется задача:
 > 
                 1 T       87  46  57  29
                 2    *   129 156 122 141
                 3        143 127 107 116
                 4         69  78 112 101
 
-***Вычисляется приведенная задача.***
 
 <br/>
