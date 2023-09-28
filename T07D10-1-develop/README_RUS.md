@@ -6,7 +6,7 @@
  7.1. [sort](#sort) \
  7.6. [matrix_extended](#matrix_extended) \
  7.7. [matrix_arithmetic](#matrix_arithmetic) \
- 7.8. [test](#test)
+ 7.8. [test](#test) 
 
 
 # Modules
@@ -83,3 +83,5 @@
                 4         69  78 112 101
 
 ***Вычисляется приведенная задача.***
+
+<br/>
