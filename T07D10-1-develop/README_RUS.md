@@ -6,7 +6,7 @@
  7.1. [sort](#sort) \
  7.2. [matrix_extended](#matrix_extended) \
  7.3. [matrix_arithmetic](#matrix_arithmetic) \
- 7.4. [test_task_0](#test_task_0)
+ 7.4. [test](#test)
 
 # Modules
 
