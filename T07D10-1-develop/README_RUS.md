@@ -76,20 +76,22 @@
 ## test
 
 >int main() {
-    test_sort();
-    test_matrix_extended();
-    test_matrix_arithmetic();
-
-    test_task_0();
-}
+<br/>    test_sort();
+<br/>    test_matrix_extended();
+<br/>    test_matrix_arithmetic();
+<br/>    test_task_0();
+<br/>}
         
 >test_sort();
+
 тест модуля ***sort***
 
 >test_matrix_extended();
+
 тест модуля ***matrix_extended***
 
 >test_matrix_arithmetic();
+
 тест модуля ***matrix_arithmetic***
 
 >test_task_0();
