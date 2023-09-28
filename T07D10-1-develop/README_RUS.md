@@ -75,12 +75,14 @@
 
 ## test
 
->int main() {
-    <br>    test_sort();
-    <br>    test_matrix_extended();
-    <br/>    test_matrix_arithmetic();
-    <br/>    test_task_0();
-<br/>}
+```c
+int main() {
+    test_sort();
+    test_matrix_extended();
+    test_matrix_arithmetic();
+    test_task_0();
+>}
+```
         
 >test_sort();
 
