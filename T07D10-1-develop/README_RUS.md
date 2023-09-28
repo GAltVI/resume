@@ -97,6 +97,7 @@ int main() {
 тест модуля ***matrix_arithmetic***
 
 >test_task_0();
+
 <br/>Вычисляется задача:
 > 
                 1 T       87  46  57  29
