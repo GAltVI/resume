@@ -44,7 +44,7 @@ The russian version of the task can be found in the repository.
 - **to calculate the maximum elements of the matrix in each of its rows and the minimum elements in each of its columns and output these values ​​at the end after the output of the matrix as two arrays (an array of maximum elements in each row and an array of minimum elements in each column);**
 - **sort the matrix, putting rows with the minimum sum of elements first, followed by rows with the maximum sum of elements.**
 
-n case of any error it is output "n/a".
+In case of any error it is output "n/a".
 
 
 | Input | Output |
