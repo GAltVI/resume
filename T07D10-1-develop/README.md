@@ -43,7 +43,8 @@ The russian version of the task can be found in the repository.
   - the size of the matrix (first the number of rows, then the columns) is taken from two numbers in stdin right before its input;
 - **to calculate the maximum elements of the matrix in each of its rows and the minimum elements in each of its columns and output these values ​​at the end after the output of the matrix as two arrays (an array of maximum elements in each row and an array of minimum elements in each column);**
 - **sort the matrix, putting rows with the minimum sum of elements first, followed by rows with the maximum sum of elements.**
-<br/>In case of any error it is output "n/a".
+
+n case of any error it is output "n/a".
 
 
 | Input | Output |
@@ -62,6 +63,7 @@ The russian version of the task can be found in the repository.
 - **code 2 – multiplication**
 - **code 3 – transpose,**
 - **menu to choose operation.**
+
 The code of the respective operation must be input before inputting the dimensions and matrices. Matrices are integer-valued. In case of any error, output "n/a".
 
 | Input | Output |
