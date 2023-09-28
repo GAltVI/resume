@@ -33,13 +33,10 @@
   - выделение памяти под матрицу, реализовано в 4 видах: 
     - (type 1) статический | максимальный размер матрицы не превышает 100 x 100,
     - (types 2-4) 3 динамических,
-      ------
       <br/>type 2 
       ![Alt Array of pointers to array segments within one buffer](./materials/1.jpg)
-      ------
       <br/>type 3
       ![Alt Array of pointers to arrays](./materials/2.jpg)
-      ------
       <br/>type 4
       ![Alt Array of pointers to segments of the second array](./materials/3.jpg)
   - для выбора способа выделения памяти реализовано меню с подпунктами 1-4 (types 1-4),
