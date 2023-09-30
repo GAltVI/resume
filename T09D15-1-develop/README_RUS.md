@@ -32,14 +32,7 @@
 |-------|--------|
 | Input | Output |
 |-------|--------|
-|4 <br/> 0 90 99 100 | RAW DATA:<br/>
-	0.00 90.00 99.00 100.00<br/>
-NORMALIZED DATA:<br/>
-	0.00 0.90 0.99 1.00<br/>
-SORTED NORMALIZED DATA:<br/>
-	0.00 0.90 0.99 1.00<br/>
-FINAL DECISION:<br/>
-	YES|
+|4 <br/> 0 90 99 100 | RAW DATA:<br/>0.00 90.00 99.00 100.00<br/>NORMALIZED DATA:<br/>0.00 0.90 0.99 1.00<br/>SORTED NORMALIZED DATA:<br/>0.00 0.90 0.99 1.00<br/>FINAL DECISION:<br/>YES |
 |-------|--------|
  <br/>
 
