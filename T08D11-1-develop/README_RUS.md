@@ -4,7 +4,7 @@
 
 8. [Modules](#modules) \
  8.1. [electro_snake](#electro_snake) \
- 8.2. [Quest 2. An old friend.](#quest-2-an-old-friend) \
+ 8.2. [det](#det) \
  8.3. [Quest 3. Decision.](#quest-3-decision) \
  8.4. [Quest 4*. Back from SLEep.](#bonus-quest-4-back-from-sleep)
 
@@ -32,13 +32,24 @@
 <br/>
 
 
-## Quest 2. An old friend.
+## det
 
-***== Получен Quest 2. Изменить программу src/det.c так, чтобы она подсчитывала и выводила определитель заданной квадратной матрицы с вещественными числами. Если определитель подсчитать невозможно, то выводить "n/a". Число вывести с точностью 6 знаков после запятой. ==***
+>**det.h | det.c**
+
+>void test_det();
+<br/>int input(double ***matrix, int *n, int *m);
+<br/>void output(double **matrix, int m, int n);
+<br/>double det(double **matrix, int m);
+<br/>void minor(double **mas, double **M, int i, int j, int m);
+
+***Вычисление определителя заданной квадратной матрицы с вещественными числами. Если определитель подсчитать невозможно, то выводится "n/a".***
 
 | Входные данные | Выходные данные |
 | ------ | ------ |
 | 3 3<br/>1 2 3<br/>4 5 6<br/>7 8 9 | 0.000000 |
+| 3 3<br/>1 2 3<br/>4 5 6.00013<br/>7 8 9 | 0.000780 |
+| 1 1<br/>4 | 4.000000 |
+| 0 0 | n/a |
 
 <br/>
 

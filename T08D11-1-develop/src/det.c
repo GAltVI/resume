@@ -1,48 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NA "n/a"
+#include "det.h"
 
-int input(double **matrix, int n, int m);
-void output(double **matrix, int m, int n);
-double det(double **matrix, int m);
-void minor(double **mas, double **M, int i, int j, int m);
-
-int main() {
+void test_det() {
     int m, n;
-    if (scanf("%d %d", &n, &m) == 2 && n > 0 && m > 0 && m == n) {
-        double **matrix = malloc(m * sizeof(double *));
-        for (int i = 0; i < m; i++) {
-            matrix[i] = malloc(n * sizeof(double));
-        }
+    double **matrix = NULL;
 
-        if (!input(matrix, n, m)) {
-            printf("%.6lf", det(matrix, m));
-        } else
-            printf(NA);
-
-        for (int i = 0; i < m; i++) free(matrix[i]);
-        free(matrix);
-
-    } else
+    if (input(&matrix, &n, &m))
+        printf("%.6lf", det(matrix, m));
+    else
         printf(NA);
 
-    return 0;
+    for (int i = 0; i < m; i++) free(matrix[i]);
+    free(matrix);
 }
 
-int input(double **matrix, int n, int m) {
-    int result = 0;
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++)
-            if (scanf("%lf", &matrix[i][j]) != 1) result = 1;
-    }
+int input(double ***matrix, int *n, int *m) {
+    int result = 1;
+    if (scanf("%d %d", n, m) == 2 && *n > 0 && *m > 0 && *m == *n) {
+        *matrix = malloc(*m * sizeof(double *));
+        
+        if (*matrix) {
+            for (int i = 0; i < *m; i++) {
+                (*matrix)[i] = malloc(*n * sizeof(double));
+            }
+            for (int i = 0; i < *m; i++) {
+                for (int j = 0; j < *n; j++)
+                    if (scanf("%lf", &(*matrix)[i][j]) != 1) {
+                        result = 0;
+                    }
+            }
+        } else result = 0;
+    } else result = 0;
     return result;
 }
 
 void output(double **matrix, int m, int n) {
     for (int i = 0; i < m; i++) {
         int j = 0;
-        for (; j < n - 1; j++) printf("%lf", matrix[i][j]);
+        for (; j < n - 1; j++) printf("%lf ", matrix[i][j]);
         printf("%lf", matrix[i][j]);
 
         if (i != m - 1) printf("\n");
@@ -50,7 +47,6 @@ void output(double **matrix, int m, int n) {
 }
 
 double det(double **matrix, int m) {
-    // if (m < 1) printf(NA);
     double d = 0;
     if (m == 1) {
         return matrix[0][0];
