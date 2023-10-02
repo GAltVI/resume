@@ -11,16 +11,16 @@
 # Modules 
 
 ## electro_snake
-\>**electro_snake.h | electro_snake.c**
+>**electro_snake.h | electro_snake.c**
 
-\>int move_like_snake(); 
-\>int input(int matrix[M][N], int *m, int *n);
-\>void output(int matrix[M][N], int m, int n);
+>int move_like_snake(); 
+<br/>int input(int matrix[M][N], int *m, int *n);
+<br/>void output(int matrix[M][N], int m, int n);
 
-\>void snake_sort(int matrix[M][N], int m, int n);
-\>void snake_horizontal(int matrix[M][N], int m, int n);
-\>void snake_vertical(int matrix[M][N], int m, int n);
-\>void copy_matrix(int from[M][N], int to[M][N], int m, int n);
+<br/>void snake_sort(int matrix[M][N], int m, int n);
+<br/>void snake_horizontal(int matrix[M][N], int m, int n);
+<br/>void snake_vertical(int matrix[M][N], int m, int n);
+<br/>void copy_matrix(int from[M][N], int to[M][N], int m, int n);
 
 ***Сортировка заданной целочисленной матрицы змейкой по горизонтали и вертикали. Вывод отсортированных матриц в таком же порядке подряд с пустой строкой между ними. В случае ошибок выводится `n/a`.***
 
