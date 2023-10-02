@@ -93,7 +93,7 @@ void invert(double **matrix, int n, int m, double ***matrix_inv) {
                 output(M, m - 1, n - 1);
                 printf("\n");
                 iter++;
-                (*matrix_inv)[j][i] = det(M, (m - 1)) * coeff * matrix[i][j] / d;
+                (*matrix_inv)[j][i] = det(M, (m - 1)) * coeff / d;
                 coeff = -coeff;
             }
         }
