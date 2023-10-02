@@ -16,7 +16,6 @@
 >int move_like_snake(); 
 <br/>int input(int matrix[M][N], int *m, int *n);
 <br/>void output(int matrix[M][N], int m, int n);
-<br/>
 <br/>void snake_sort(int matrix[M][N], int m, int n);
 <br/>void snake_horizontal(int matrix[M][N], int m, int n);
 <br/>void snake_vertical(int matrix[M][N], int m, int n);
