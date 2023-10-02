@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 10
-#define M 10
-#define NA "n/a"
+#include "electro_snake.h"
 
 /*
     1 6 7
@@ -16,53 +14,103 @@
     7 8 9
 */
 
-int input(int **matrix, int n, int m);
-void output(int **matrix, int n, int m);
-
-void quick_sort(int *l, int *r);
-void swap(int *a, int *b);
-
-int main() { return 0; }
-
-int input(int **matrix, int n, int m) {
+int move_like_snake() {
     int result = 0;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++)
-            if (scanf("%d", &matrix[i][j]) != 1) result = 1;
-    }
+    int m = 0;
+    int n = 0;
+    int matrix[M][N];
+
+    if (!input(matrix, &m, &n)) {
+        snake_sort(matrix, m, n);
+    } else result = 1;
+    
+    if (result) printf(NA);
+
     return result;
 }
 
-void output(int **matrix, int n, int m) {
-    for (int i = 0; i < n; i++) {
-        int j = 0;
-        for (; j < m - 1; j++) printf("%d ", matrix[i][j]);
-        printf("%d", matrix[i][j]);
+int input(int matrix[M][N], int *m, int *n) {
+    int result = 0;
+    if (scanf("%d%d", m, n) == 2 && *m > 0 && *n > 0) {
+        for (int i = 0; i < *m; i++) {
+            for (int j = 0; j < *n; j++)
+                if (scanf("%d", &matrix[i][j]) != 1) result = 1;
+        }
+    } else result = 1;
+    return result;
+}
 
+void output(int matrix[M][N], int m, int n) {
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d", matrix[i][j]);
+            if (j != n - 1) printf(" ");
+        }
         if (i != m - 1) printf("\n");
     }
 }
 
-void quick_sort(int *l, int *r) {
-    if (r - l <= 1) return;
-    int m = *(l + (r - l) / 2);
-    int *ll = l;
-    int *rr = r - 1;
-    while (ll <= rr) {
-        while (*ll < m) ll++;
-        while (*rr > m) rr--;
-        if (ll <= rr) {
-            swap(ll, rr);
-            ll++;
-            rr--;
-        }
-    }
-    if (l < rr) quick_sort(l, rr + 1);
-    if (ll < r) quick_sort(ll, r);
+void snake_sort(int matrix[M][N], int m, int n) {
+    snake_horizontal(matrix, m, n);
+    printf("\n\n");
+    snake_vertical(matrix, m, n);
 }
 
-void swap(int *a, int *b) {
-    int x = *a;
-    *a = *b;
-    *b = x;
+void snake_horizontal(int matrix[M][N], int m, int n) {
+    //printf("\n~~~BEFORE~~~\n");
+    //output(matrix, m, n);
+    int matrix_h[M][N];
+    copy_matrix(matrix, matrix_h, m, n);
+    
+    //printf("\n~~~snake~~~>horizontal\n");
+    int tmp = 0;
+    for (int i = 1; i < m; i = i+2) 
+    {
+        for (int j = n - 1, k = 0; j > k; j--, k++)
+        {
+            tmp = matrix_h[i][j];
+            matrix_h[i][j] = matrix_h[i][k];
+            matrix_h[i][k] = tmp;
+        }
+    }
+    //printf("\n~~~AFTER~~~\n");
+    output(matrix_h, m, n);
+}
+void snake_vertical(int matrix[M][N], int m, int n) {
+    //printf("\n~~~BEFORE~~~\n");
+    //output(matrix, m, n);
+    int matrix_v[M][N];
+    copy_matrix(matrix, matrix_v, m, n);
+    
+    //printf("\n~~~snake~~~>vertical\n");
+    int k = 0;
+    int l = 0;
+    int step = 1;
+    for (int i = 0; i < m; i++) 
+    {
+        for (int j = 0; j < n; j++) {
+            matrix_v[k][l] = matrix[i][j];
+
+            k += step;
+            if (k == m) {
+                l++;
+                k = m - 1;
+                step *= -1;
+            } else if (k == -1) {
+                l++;
+                k = 0;
+                step *= -1;
+            }
+        }
+    }
+    //printf("\n~~~AFTER~~~\n");
+    output(matrix_v, m, n);
+}
+
+void copy_matrix(int from[M][N], int to[M][N], int m, int n) {
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            to[i][j] = from[i][j];
+        }
+    }
 }
