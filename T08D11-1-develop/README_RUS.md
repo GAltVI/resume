@@ -5,7 +5,7 @@
 8. [Modules](#modules) \
  8.1. [electro_snake](#electro_snake) \
  8.2. [det](#det) \
- 8.3. [Quest 3. Decision.](#quest-3-decision) \
+ 8.3. [invert](#invert) \
  8.4. [Quest 4*. Back from SLEep.](#bonus-quest-4-back-from-sleep)
 
 # Modules 
@@ -54,13 +54,26 @@
 <br/>
 
 
-## Quest 3. Decision.
+## invert
 
-***== Получен Quest 3. Изменить программу src/invert.c так, чтобы она подсчитывала и выводила обратную матрицу для данной квадратной матрицы с вещественными числами. В случае ошибки выводить "n/a". В конце каждой строки НЕ должны присутствовать пробелы. После вывода последней строки матрицы знак '\n' не требуется. Числа выводить через пробел с точностью 6 знаков после запятой. ==***
+>**invert.h | invert.c**
+
+>void allocate_memory(double ***matrix, int n, int m);
+<br/>int input(double ***matrix, int *n, int *m);
+<br/>void output(double **matrix, int n, int m);
+<br/>int invert(double **matrix, int n, int m, double ***matrix_inv);
+<br/>double det(double **matrix, int m);
+<br/>void minor(double **matrix, double **M, int i, int j, int m);
+<br/>void test_invert();
+
+***Вычисление и вывод обратной матрицы для заданной квадратной матрицы с вещественными числами. В случае ошибки выводится "n/a". Числа выводятся через пробел с точностью 6 знаков после запятой.***
 
 | Входные данные | Выходные данные |
 | ------ | ------ |
 | 3 3<br/>1 0.5 1<br/>4 1 2<br/>3 2 2 | -1.000000 0.500000 0.000000<br/>-1.000000 -0.500000 1.000000<br/>2.500000 -0.250000 -0.500000 |
+| 2 2<br/>1 2<br/>3 4 | -2.000000 1.000000<br/>1.500000 -0.500000 |
+| 1 1 | n/a |
+| 2 3 | n/a |
 
 <br/>
 

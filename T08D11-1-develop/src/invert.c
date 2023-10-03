@@ -1,17 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+#include "invert.h"
 
-#define NA "n/a"
-
-void allocate_memory(double ***matrix, int n, int m);
-int input(double ***matrix, int *n, int *m);
-void output(double **matrix, int n, int m);
-
-void invert(double **matrix, int n, int m, double ***matrix_inv);
-double det(double **matrix, int m);
-void minor(double **matrix, double **M, int i, int j, int m);
-
-void main() { 
+void test_invert() { 
     int m, n;
     double **matrix = NULL;
     double **matrix_inv = NULL;
@@ -19,15 +11,15 @@ void main() {
     if (input(&matrix, &n, &m)) {
         allocate_memory(&matrix_inv, n, m);
         if (*matrix_inv) {
-            invert(matrix, m, n, &matrix_inv);
-            printf("\n~~~RESULT~~~\n");
-            output(matrix_inv, n, m);
-        } else
-            printf(NA);
-    }
-    else
-        printf(NA);
+            if (invert(matrix, m, n, &matrix_inv)) {
+                // printf("\n~~~RESULT~~~\n");
+                output(matrix_inv, n, m);
+            } else printf(NA);
+        } else printf(NA);
+    } else printf(NA);
 
+    //printf("");
+    
     for (int i = 0; i < m; i++) {
         free(matrix[i]); 
         free(matrix_inv[i]);
@@ -47,7 +39,7 @@ void allocate_memory(double ***matrix, int n, int m) {
 
 int input(double ***matrix, int *n, int *m) {
     int result = 1;
-    if (scanf("%d %d", n, m) == 2 && *n > 0 && *m > 0 && *m == *n) {
+    if (scanf("%d %d", n, m) == 2 && *n > 1 && *m > 1 && *m == *n) {
         allocate_memory(matrix, *n, *m);
         if (*matrix) {
             for (int i = 0; i < *m; i++) {
@@ -71,36 +63,35 @@ void output(double **matrix, int m, int n) {
     }
 }
 
-void invert(double **matrix, int n, int m, double ***matrix_inv) {
-    if (m == 1) {
-        (*matrix_inv)[0][0] = 1;
-        // return;
-    } else if (m > 1) {
+int invert(double **matrix, int n, int m, double ***matrix_inv) {
+    int result = 1;
+    if (m > 1) {
         double **M = malloc((m-1) * sizeof(double *));
         for (int i = 0; i < (m-1); i++) {
             M[i] = malloc((m-1) * sizeof(double));
         }
 
         double d = det(matrix, m);
-        printf("\nDET = %lf\n\n", d);
+        //printf("\nDET = %lf\n\n", d);
         int coeff = 1;
-        int iter = 1;
+        // int iter = 1;
         
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 minor(matrix, M, i, j, m);
-                printf("\niter %d: i = %d, j = %d\n", iter, i, j);
-                output(M, m - 1, n - 1);
-                printf("\n");
-                iter++;
+                // printf("\niter %d: i = %d, j = %d\n", iter, i, j);
+                // output(M, m - 1, n - 1);
+                // printf("\n");
+                // iter++;
+                coeff = pow(-1, i + j);
                 (*matrix_inv)[j][i] = det(M, (m - 1)) * coeff / d;
-                coeff = -coeff;
             }
         }
 
         for (int i = 0; i < m; i++) free(M[i]);
         free(M);
-    }
+    } else result = 0;
+    return result;
 }
 
 double det(double **matrix, int m) {
