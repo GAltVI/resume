@@ -16,7 +16,7 @@ void test_det() {
     free(matrix);
 }
 
-int input(double ***matrix, int *n, int *m) {
+int input(double ***matrix, int *m, int *n) {
     int result = 1;
     if (scanf("%d %d", n, m) == 2 && *n > 0 && *m > 0 && *m == *n) {
         *matrix = malloc(*m * sizeof(double *));
