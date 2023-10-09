@@ -1,39 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define NA "n/a"
 
-int input(double ***matrix, int *m, int *n);
-void output(double **matrix, int m, int n);
-double det(double **matrix, int m);
-void minor(double **mas, double **M, int i, int j, int m);
+#include "sle.h"
 
-int sle(double **matrix, int m, int n, double *roots);
-void output_roots(double *roots, int m);
-
-void main() {
+void test_sle() {
     int result = 0;
     int m, n;
     double **matrix = NULL;
     double *roots = NULL;
 
     if (input(&matrix, &m, &n)) {
-        roots = malloc(n * sizeof(double));
-        result = sle(matrix, m, n, roots);
-        if (result) {
-            output_roots(roots, m);
-        } else printf("ERROR: Can't solve SLAE by Cramer's rule (determinant = 0).\n");
-    }
-    else
-        printf(NA);
-
+        roots = malloc((n - 1) * sizeof(double));
+        printf("\n");
+        if (sle(matrix, m, n, &roots)) {
+            output_roots(roots, n - 1);
+        } else printf("ERROR:  Can't solve SLAE (equations count is not equal variables count).");
+    } else printf("ERROR: Invalid input.");
+    printf("\n");
     free(roots);
     for (int i = 0; i < m; i++) free(matrix[i]);
     free(matrix);
 }
 
-int input(double ***matrix, int *m, int *n) {
+int sle(double **matrix, int m, int n, double **roots) {
     int result = 1;
-    if (scanf("%d %d", m, n) == 2 && *m > 0 && *n > 0) {
+    if (cramer(matrix, m, n, &roots)) {
+    } else if (gauss(matrix, m, n, &roots)) {
+    } else result = 0;
+    return result;
+}
+
+int input_sle(double ***matrix, int *m, int *n) {
+    int result = 1;
+    if (scanf("%d %d", m, n) == 2 && *m > 0 && *n > 0 && *m == *n - 1) {
         *matrix = malloc(*m * sizeof(double *));
         
         if (*matrix) {
@@ -51,62 +50,7 @@ int input(double ***matrix, int *m, int *n) {
     return result;
 }
 
-void output(double **matrix, int m, int n) {
-    for (int i = 0; i < m; i++) {
-        int j = 0;
-        for (; j < n - 1; j++) printf("%lf ", matrix[i][j]);
-        printf("%lf", matrix[i][j]);
-
-        if (i != m - 1) printf("\n");
-    }
-}
-
-double det(double **matrix, int m) {
-    double d = 0;
-    if (m == 1) {
-        return matrix[0][0];
-    }
-
-    if (m == 2) {
-        d = (matrix[0][0] * matrix[1][1]) - (matrix[1][0] * matrix[0][1]);
-        return d;
-    }
-
-    double **M = malloc(m * sizeof(double *));
-    for (int i = 0; i < m; i++) {
-        M[i] = malloc(m * sizeof(double));
-    }
-
-    int coeff = 1;
-
-    if (m > 2) {
-        for (int i = 0; i < m; i++) {
-            minor(matrix, M, i, 0, m);
-            d = d + coeff * matrix[i][0] * det(M, (m - 1));
-            coeff = -coeff;
-        }
-    }
-
-    for (int i = 0; i < m; i++) free(M[i]);
-    free(M);
-    return d;
-}
-
-void minor(double **matrix, double **M, int i, int j, int m) {
-    int shift_i = 0;
-    int shift_j = 0;
-    for (int M_i = 0; M_i < (m - 1); M_i++) {
-        if (M_i == i) shift_i = 1;
-
-        for (int M_j = 0; M_j < (m - 1); M_j++) {
-            if (M_j == j) shift_j = 1;
-
-            M[M_i][M_j] = matrix[M_i + shift_i][M_j + shift_j];
-        }
-    }
-}
-
-int sle(double **matrix, int m, int n, double *roots) {
+int cramer(double **matrix, int m, int n, double **roots) {
     int result = 1;
     double **matrix_k = malloc(m * sizeof(double *));
     if (matrix_k) {
@@ -137,9 +81,9 @@ int sle(double **matrix, int m, int n, double *roots) {
                 }
                 // printf("<A%i>\n", k + 1);
                 // output(matrix_k, m, n - 1);
-                // d_k = det(matrix_k, m);
+                d_k = det(matrix_k, m);
                 // printf("\nd%i = %.6lf\n", k + 1, d_k);
-                roots[k] = d_k / d;
+                (*roots)[k] = d_k / d;
             }
         } else result = 0;
         
@@ -149,9 +93,55 @@ int sle(double **matrix, int m, int n, double *roots) {
     return result;
 }
 
-void output_roots(double *roots, int m) {
-    for (int i = 0; i < m; i++) {
+int gauss(double **matrix, int m, int n, double **roots) {
+    int result = 1;
+    double **matrix_k = malloc(m * sizeof(double *));
+    if (matrix_k) {
+        for (int i = 0; i < m; i++) {
+            matrix_k[i] = malloc(n * sizeof(double));
+        }
+    
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                    matrix_k[i][j] = matrix[i][j];  
+            }
+        }
+        
+        // printf("\n~~~calc~~~\n");
+        for (int k = 0; k < n - 1; k++) {
+            for (int i = k + 1; i < m; i++) {
+                if (matrix_k[k][k] != 0) {
+                    double coeff_col = matrix_k[i][k];
+                    for (int j = k; j < n; j++) {
+                        matrix_k[i][j] -= matrix_k[k][j] * coeff_col /  matrix_k[k][k];
+                    }
+                }
+                // printf("\n<A%i>\n", k + 1);
+                // output(matrix_k, m, n);
+            }
+        }
+        
+        for (int j = n - 2; j >= 0; j--) {
+            if (matrix_k[j][j] == 0) {
+                (*roots)[j] = 1;
+            } else {
+                double val = matrix_k[j][n - 1]; //последний стoлбец СЛУ или вектор b в A*x=b
+                for (int k = j + 1; k < n - 1; k++) {
+                    val -= (*roots)[k] * matrix_k[j][k];
+                }
+                (*roots)[j] = val / matrix_k[j][j];
+            }
+        }
+        
+        for (int i = 0; i < m; i++) free(matrix_k[i]);
+    } else result = 0;
+    free(matrix_k);
+    return result;
+}
+
+void output_roots(double *roots, int n) {
+    for (int i = 0; i < n; i++) {
         printf("%lf", roots[i]);
-        if (i != m - 1) printf("\n");
+        if (i != n - 1) printf(" ");
     }
 }
