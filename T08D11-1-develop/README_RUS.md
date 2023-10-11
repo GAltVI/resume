@@ -6,7 +6,8 @@
  8.1. [electro_snake](#electro_snake) \
  8.2. [det](#det) \
  8.3. [invert](#invert) \
- 8.4. [Quest 4*. Back from SLEep.](#bonus-quest-4-back-from-sleep)
+ 8.4. [sle](#sle) \
+ 8.5. [test](#test)
 
 # Modules 
 
@@ -80,14 +81,60 @@
 
 ## sle
 
+>void test_sle();
+<br/>int input_sle(double ***matrix, int *m, int *n);
+<br/>int sle(double **matrix, int m, int n, double **roots);
+<br/>int cramer(double **matrix, int m, int n, double **roots);
+<br/>int gauss(double **matrix, int m, int n, double **roots);
+<br/>void output_roots(double *roots, int n);
+
 ***Решение СЛАУ A*x=b либо методом Крамера, либо методом Гаусса (в случае, если определитель матрицы A равен 0, при этом свободные переменные равны 1). Коэффициенты уравнения вводятся в виде матрицы через stdin. Варианты сообщений об ошибках: <br/> ERROR:  Can't solve SLAE (equations count is not equal variables count).<br/>ERROR: Invalid input.<br/> Решение выводится через пробел с точностью 6 знаков после запятой.***
 
 | Входные данные | Выходные данные |
 | ------ | ------ |
-| 3 4<br/>1 1 1 2<br/>4 5 3 7<br/>2 7 7 9 | 1.000000 0.000000 1.000000 |
+| ```3 4<br/>1 1 1 2<br/>4 5 3 7<br/>2 7 7 9``` | 1.000000 0.000000 1.000000 |
 | 2 3<br/>506 66 2315.1<br/>66 11 392.3 | -0.351818 37.774545 |
 | 1 2<br/>0.5 4 | 8.000000 |
 | 2 4 | n/a |
 | 2 3<br/>1 0 3<br/>0 0 2 | n/a | 
 | 4 5<br/>2 3 -1 1 1<br/>8 12 -9 8 3<br/>4 6 3 -2 3<br/>2 3 9 -7 3 | -1.000000 1.000000 1.000000 1.000000 |
+<br/>
+
+
+## test
+
+```c
+#include <stdio.h>
+
+#include "det.h"
+#include "sle.h"
+
+int main() {
+    int test_no;
+    printf("-----------\nelectro snake test - 1\n");
+    printf("determinant test - 2\n");
+    printf("invert matrix test - 3\n");
+    printf("SLE test - 4\n-----------\n");
+    printf("test number > ");
+    scanf("%d", &test_no);
+    switch (test_no) {
+        case 1: printf("~~~test_electro_snake~~~\n");
+                move_like_snake();
+                break;
+        case 2: printf("~~~test_det~~~\n");
+                test_det();
+                break;
+        case 3: printf("~~~test_invert~~~\n");
+                test_invert();
+                break;
+        case 4: printf("~~~test_sle~~~\n");
+                test_sle();
+                break;
+        default: break;
+    }
+    return 0;
+>}
+```
+
+***Тестирование модулей: electro_snake, det, invert, sle.***
 <br/>

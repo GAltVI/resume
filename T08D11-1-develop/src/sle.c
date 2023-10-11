@@ -9,7 +9,7 @@ void test_sle() {
     double **matrix = NULL;
     double *roots = NULL;
 
-    if (input(&matrix, &m, &n)) {
+    if (input_sle(&matrix, &m, &n)) {
         roots = malloc((n - 1) * sizeof(double));
         printf("\n");
         if (sle(matrix, m, n, &roots)) {
@@ -24,15 +24,15 @@ void test_sle() {
 
 int sle(double **matrix, int m, int n, double **roots) {
     int result = 1;
-    if (cramer(matrix, m, n, &roots)) {
-    } else if (gauss(matrix, m, n, &roots)) {
+    if (cramer(matrix, m, n, roots)) {
+    } else if (gauss(matrix, m, n, roots)) {
     } else result = 0;
     return result;
 }
 
 int input_sle(double ***matrix, int *m, int *n) {
     int result = 1;
-    if (scanf("%d %d", m, n) == 2 && *m > 0 && *n > 0 && *m == *n - 1) {
+    if (scanf("%d %d", m, n) == 2 && *m > 0 && *n > 1 && *m == *n - 1) {
         *matrix = malloc(*m * sizeof(double *));
         
         if (*matrix) {

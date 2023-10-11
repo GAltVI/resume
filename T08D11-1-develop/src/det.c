@@ -7,18 +7,19 @@ void test_det() {
     int m, n;
     double **matrix = NULL;
 
-    if (input(&matrix, &n, &m))
+    if (input(&matrix, &n, &m)) {
         printf("%.6lf", det(matrix, m));
-    else
-        printf(NA);
+    } else {
+        printf("n/a\n"); 
+    }
 
-    for (int i = 0; i < m; i++) free(matrix[i]);
+    for (int i = 0; i < m; i++) { free(matrix[i]); }
     free(matrix);
 }
 
 int input(double ***matrix, int *m, int *n) {
     int result = 1;
-    if (scanf("%d %d", n, m) == 2 && *n > 0 && *m > 0 && *m == *n) {
+    if (scanf("%d %d", n, m) == 2 && *n > 1 && *m > 1 && *m == *n) {
         *matrix = malloc(*m * sizeof(double *));
         
         if (*matrix) {
