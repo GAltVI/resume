@@ -89,7 +89,7 @@ The russian version of the task can be found in the repository.
 <br/>int gauss(double **matrix, int m, int n, double **roots);
 <br/>void output_roots(double *roots, int n);
 
-***It solves a system of linear equations using either Cramer's rule or Gaussian elimination. Equation coefficients is entered as a matrix via stdin. Errors variations are: <br/> ERROR:  Can't solve SLAE (equations count is not equal variables count).<br/>ERROR: Invalid input.<br/> Numbers should be separated by a space with an accuracy of 6 decimal places.***
+***It solves a system of linear equations using either Cramer's rule or Gaussian elimination. Equation coefficients is entered as a matrix via stdin. Errors variations are: <br/> ERROR:  Can't solve SLAE (equations count is not equal variables count).<br/>ERROR: Invalid input.<br/> Numbers is separated by a space with an accuracy of 6 decimal places.***
 
 | Input | Output |
 | ------ | ------ |
