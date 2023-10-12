@@ -4,7 +4,7 @@
 
 10. [Modules](#modules) \
  10.1. [my_string](#my_string) \
- 10.2. [string_test](#string_test) 
+ 10.2. [text_processor](#text_processor) 
 
 
 # Modules
@@ -37,7 +37,7 @@ char *my_strtok(char *str1, char *str2);
 
 
 
-~~## Bonus Quest 8*. Width.~~
+~~## text_processor~~
 
 ~~***src/text_processor.c~~
 ~~При запуске с ключом командной строки -w принимает на вход в stdin число (ширину строки) и текст до 100 символов, оканчивающийся символом переноса строки. При любых других ключах программа выводит "n/a". ~~
