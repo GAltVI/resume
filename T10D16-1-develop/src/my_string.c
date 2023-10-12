@@ -1,13 +1,13 @@
-#include "s21_string.h"
+#include "my_string.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int s21_strlen(char *str) { return (str && *str) ? (s21_strlen(str + 1) + 1) : 0; }
+int my_strlen(char *str) { return (str && *str) ? (my_strlen(str + 1) + 1) : 0; }
 
-int s21_strcmp(char *str1, char *str2) {
-    int len1 = s21_strlen(str1);
-    int len2 = s21_strlen(str2);
+int my_strcmp(char *str1, char *str2) {
+    int len1 = my_strlen(str1);
+    int len2 = my_strlen(str2);
     int res = 0;
 
     if (len1 > len2) res = 1;
@@ -29,9 +29,9 @@ int s21_strcmp(char *str1, char *str2) {
     return res;
 }
 
-int s21_strcpy(char *str1, char *str2) {
-    int len1 = s21_strlen(str1);
-    int len2 = s21_strlen(str2);
+int my_strcpy(char *str1, char *str2) {
+    int len1 = my_strlen(str1);
+    int len2 = my_strlen(str2);
     int res = 0;
     char *p1, *p2;
     if (len1 == len2) {
@@ -41,9 +41,9 @@ int s21_strcpy(char *str1, char *str2) {
     return res;
 }
 
-char *s21_strcat(char *str1, char *str2) {
-    int len1 = s21_strlen(str1);
-    int len2 = s21_strlen(str2);
+char *my_strcat(char *str1, char *str2) {
+    int len1 = my_strlen(str1);
+    int len2 = my_strlen(str2);
 
     char *str_res = NULL;
     str_res = (char *)malloc((len1 + len2 + 1) * sizeof(char));
@@ -55,9 +55,9 @@ char *s21_strcat(char *str1, char *str2) {
     return str_res;
 }
 
-int s21_strchr(char *str1, char symb) {
+int my_strchr(char *str1, char symb) {
     int res = -1;
-    int len1 = s21_strlen(str1);
+    int len1 = my_strlen(str1);
 
     for (int i = 0; i < len1; i++) {
         if (str1[i] == symb) {
@@ -69,41 +69,43 @@ int s21_strchr(char *str1, char symb) {
     return res;
 }
 
-const char *s21_strstr(char *str1, char *str2) {
-    int len1 = s21_strlen(str1);
+const char *my_strstr(char *str1, char *str2) {
+    int len1 = my_strlen(str1);
 
     if (*str2 == '\0') return str1 + len1;
     const char *ptr;
     for (int i = 0; i < len1; i++) {
         if (*(str1 + i) == *str2) {
-            ptr = s21_strstr(str1 + i + 1, str2 + 1);
+            ptr = my_strstr(str1 + i + 1, str2 + 1);
             return (ptr) ? ptr - 1 : 0;
         }
     }
     return 0;
 }
 
-char *s21_strtok(char *str1, char *str2) {
-    int len1 = s21_strlen(str1);
-    int len2 = s21_strlen(str2);
+char *my_strtok(char *str1, char *str2) {
+    int len1 = my_strlen(str1);
+    int len2 = my_strlen(str2);
 
     char *str_res = (char *)malloc(sizeof(char) * len1);
 
     int ind = 0;
     int i = 0;
-    if (*str1 != '\0') {
+    if (str1 && str_res) {
         for (i = 0; i < len1; i++) {
             str_res[i] = str1[i];
+        }
+        for (i = 0; i < len1 && !ind; i++) {
+            str_res[i] = str1[i];
             for (int j = 0; j < len2; j++) {
-                if (str_res[i] == str2[j]) {
+                if (str1[i] == str2[j]) {
                     str_res[i] = '\0';
                     ind = 1;
                     break;
                 }
             }
-            if (ind == 1) break;
         }
-    } else
-        str_res = NULL;
+    } 
+    if (ind == 0) return NULL;
     return str_res + i;
 }
