@@ -12,13 +12,13 @@
 ## my_string
 >**my_string.h | my_string.c || my_string_test.c**
 
-int my_strlen(char *str);
-int my_strcmp(char *str1, char *str2);
-int my_strcpy(char *str1, char *str2);
-char *my_strcat(char *str1, char *str2);
-int my_strchr(char *str1, char symb);
-const char *my_strstr(char *str1, char *str2);
-char *my_strtok(char *str1, char *str2);
+>int my_strlen(char *str);
+<br/>int my_strcmp(char *str1, char *str2);
+<br/>int my_strcpy(char *str1, char *str2);
+<br/>char *my_strcat(char *str1, char *str2);
+<br/>int my_strchr(char *str1, char symb);
+<br/>const char *my_strstr(char *str1, char *str2);
+<br/>char *my_strtok(char *str1, char *str2);
 
 ***Объявление и определение функций в файлах src/my_string.h и src/my_string.c. <br/>Тесты для проверки функций в файле src/string_test. Проверка функций производится на наборе тестовых данных: нормальные значения, ненормальные значения, краевые значения и т.д. По каждому тесту в stdout выводится вход, выход и результат теста (SUCCESS/FAIL).***
 
