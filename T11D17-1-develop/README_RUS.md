@@ -64,14 +64,7 @@
 
 | Тест | Результат |
 | ------ | ----- |
-| add test 1
-<br/>-----------
-<br/>list before:
-<br/>12, 1 |
-list after:
-<br/>12, 1
-<br/>10, 0
-<br/>SUCCESS |
+| add test 1<br/>-----------<br/>list before:<br/>12, 1 | list after:<br/>12, 1<br/>10, 0<br/>SUCCESS |
 
 -----------
 add test 2
