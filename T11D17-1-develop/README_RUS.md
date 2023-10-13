@@ -62,6 +62,68 @@
 В **src/list_test.c** тесты для проверки работы функций add_door и remove_door односвязного списка. В случае успешного прохождения теста возвращает SUCCESS, в случае ошибки - FAIL. <br/>Сборка при помощи Makefile. Имя стадии - **list_test**. 
 Исполняемый файл распологается в корне репозитория в папке build и имеет имя **Quest_2**.
 
+| Тест | Результат |
+| ------ | ----- |
+| add test 1
+<br/>-----------
+<br/>list before:
+<br/>12, 1 |
+list after:
+<br/>12, 1
+<br/>10, 0
+<br/>SUCCESS |
+
+-----------
+add test 2
+-----------
+list before:
+list empty
+list after:
+12, 1
+SUCCESS
+
+-----------
+remove test 2
+-----------
+list before:
+10, 1
+12, 0
+14, 0
+list after:
+12, 0
+14, 0
+SUCCESS
+
+-----------
+remove test 3
+-----------
+list before:
+10, 1
+12, 0
+14, 0
+list after:
+10, 1
+14, 0
+SUCCESS
+
+-----------
+remove test 4
+-----------
+list before:
+10, 1
+list after:
+list empty
+SUCCESS
+
+-----------
+remove test 5
+-----------
+list before:
+list empty
+list after:
+list empty
+SUCCESS
+
 <br/>
 
 

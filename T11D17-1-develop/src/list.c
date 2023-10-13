@@ -13,10 +13,19 @@ struct node* init(const struct door* door) {
 }
 
 struct node* add_door(struct node* elem, const struct door* door) {
-    struct node* tmp = (struct node*)malloc(sizeof(struct door));
-    tmp->door = *(door);
-    tmp->next_door = elem;
-    return tmp;
+    if (elem == NULL) {
+        elem = init(door);
+    } else {
+        struct node* p_list = elem;
+        while (p_list->next_door) {
+            p_list = p_list->next_door;
+        }
+        struct node* tmp = (struct node*)malloc(sizeof(struct door));
+        tmp->door = *(door);
+        tmp->next_door = NULL;
+        p_list->next_door = tmp;
+    }
+    return elem;
 }
 
 struct node* find_door(int door_id, struct node* root) {
